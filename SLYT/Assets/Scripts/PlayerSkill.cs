@@ -28,8 +28,7 @@ public class PlayerSkill : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        print(Input.GetAxis("4"));
-        print(Input.GetAxis("5"));
+       
         if (Input.GetAxis("Horizontal") != 0)
         {
             beifen_fangxiang = Input.GetAxis("Horizontal") * Vector3.right;
@@ -78,7 +77,7 @@ public class PlayerSkill : MonoBehaviour {
                 beg_move = false;
 
             }
-            if (time_ >= time_count-0.2f&&time_<time_count)
+            if (time_ >= time_count-0.3f&&time_<time_count)
             {
                 player_sign.GetComponent<Rigidbody>().velocity = 0.3f * fangxiang * sign_speed;
 
@@ -90,5 +89,10 @@ public class PlayerSkill : MonoBehaviour {
 
 
 
+    }
+    public void back()
+    {
+        print("Dfsd");
+        time_ = 10;
     }
 }

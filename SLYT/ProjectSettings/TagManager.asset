@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - sign
   layers:
   - Default
   - TransparentFX
@@ -17,8 +18,8 @@ TagManager:
   - ground
   - player
   - sign
-  - 
-  - 
+  - player_can
+  - sign_can
   - 
   - 
   - 
