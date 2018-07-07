@@ -22,7 +22,7 @@ public class MapView : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(Input.GetKeyDown(KeyCode.Joystick1Button8)&&!view)
+		if(Input.GetKeyDown(KeyCode.Joystick1Button9)&&!view)
         {
             print("ea");
                 
@@ -32,7 +32,7 @@ public class MapView : MonoBehaviour {
             view1 = true;
           
         }
-        if (Input.GetKeyDown(KeyCode.Joystick1Button8) && view)
+        if (Input.GetKeyDown(KeyCode.Joystick1Button9) && view)
         {
             
             cam.gameObject.GetComponent<CameraCtr>().enabled = true;
