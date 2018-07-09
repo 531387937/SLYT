@@ -59,7 +59,7 @@ public class PlayerSkill : MonoBehaviour {
 
             player_sign.GetComponent<Rigidbody>().velocity = fangxiang * sign_speed;
 
-            if ( time_ >= time_count)
+            if ( time_ >= time_count+0.2)
             {
                 player_sign.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
                 //  player_sign.GetComponent<MeshRenderer>().material.SetColor("_GlowColor", Color.yellow);
@@ -81,7 +81,7 @@ public class PlayerSkill : MonoBehaviour {
                 beg_move = false;
 
             }
-            if (time_ >= time_count-0.3f&&time_<time_count)
+            if (time_ >= time_count-0.3f&&time_<time_count+0.2)
             {
                 player_sign.GetComponent<Rigidbody>().velocity = 0.3f * fangxiang * sign_speed;
 
