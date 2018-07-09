@@ -11,6 +11,7 @@ public class PlayerCtr : MonoBehaviour {
     public AudioSource A;
     private Vector3 tran;
     private bool tr;
+    private bool no=false;
     // Use this for initialization
     void Start()
     {
@@ -24,20 +25,20 @@ public class PlayerCtr : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        //if (Mathf.Abs(rig.velocity.x) > movespeed)
-        //{
-        //    if (rig.velocity.x > 0)
-        //    {
-        //        rig.velocity = new Vector3(movespeed, rig.velocity.y, 0);
-        //    }
-        //    else
-        //    {
-        //        rig.velocity = new Vector3(-movespeed, rig.velocity.y, 0);
-        //    }
+        if (Mathf.Abs(rig.velocity.x) > movespeed)
+        {
+            if (rig.velocity.x > 0)
+            {
+                rig.velocity = new Vector3(movespeed, rig.velocity.y, 0);
+            }
+            else
+            {
+                rig.velocity = new Vector3(-movespeed, rig.velocity.y, 0);
+            }
 
-        //}
-        
-        //transform.Translate(Vector3.right * Input.GetAxis("Horizontal") * movespeed * Time.deltaTime);
+        }
+        if (no)
+        { transform.Translate(Vector3.right * Input.GetAxis("Horizontal") * movespeed * Time.deltaTime); }
         if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Joystick1Button0)) && isground)
         {
             //A.Play();
@@ -50,8 +51,12 @@ public class PlayerCtr : MonoBehaviour {
         }
     }
     private void FixedUpdate()
-    {rig.velocity =new Vector3( Input.GetAxis("Horizontal") * movespeed,rig.velocity.y,0)+tran;
-        tran = new Vector3(tran.x, 0, 0);
+    {
+        if (!no)
+        {
+            rig.velocity = new Vector3(Input.GetAxis("Horizontal") * movespeed, rig.velocity.y, 0) + tran;
+            tran = new Vector3(tran.x, 0, 0);
+        }
          point = transform.position - transform.up * 0.5f;
         Collider[] outputCols = Physics.OverlapSphere(point, 0.05f, LayerMask.GetMask("ground"));
 
@@ -67,6 +72,7 @@ public class PlayerCtr : MonoBehaviour {
         if(isground)
         {
             tran = Vector3.zero;
+            no = true;
         }
     }
     public void death()
@@ -88,6 +94,10 @@ public class PlayerCtr : MonoBehaviour {
     {
         tran = (Vector3)trans;
         tr = true;
+    }
+    public void stop(bool yes)
+    {
+        no = yes;
     }
     IEnumerator coRoutine(string str)
     {
