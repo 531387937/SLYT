@@ -42,7 +42,7 @@ public class PlayerCtr : MonoBehaviour {
         if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Joystick1Button0)) && isground)
         {
             //A.Play();
-            rig.velocity = new Vector3(rig.velocity.x, jump_velociy, 0);
+            rig.velocity += new Vector3(rig.velocity.x, jump_velociy, 0);
 
         }
         if (isground && Input.GetAxis("Horizontal") == 0)
