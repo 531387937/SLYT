@@ -9,11 +9,14 @@ public class PlayerCtr : MonoBehaviour {
     private Vector3 point;
     private bool isground;
     public AudioSource A;
-
+    private Vector3 tran;
+    private bool tr;
     // Use this for initialization
     void Start()
     {
+        tr = false;
         // Horizontal Vertical
+        tran = Vector3.zero;
         rig = GetComponent<Rigidbody>();
         transform.position = new Vector3(PlayerPrefs.GetFloat("save_x"), PlayerPrefs.GetFloat("save_y"), 0);
     }
@@ -21,20 +24,20 @@ public class PlayerCtr : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (Mathf.Abs(rig.velocity.x) > movespeed)
-        {
-            if (rig.velocity.x > 0)
-            {
-                rig.velocity = new Vector3(movespeed, rig.velocity.y, 0);
-            }
-            else
-            {
-                rig.velocity = new Vector3(-movespeed, rig.velocity.y, 0);
-            }
+        //if (Mathf.Abs(rig.velocity.x) > movespeed)
+        //{
+        //    if (rig.velocity.x > 0)
+        //    {
+        //        rig.velocity = new Vector3(movespeed, rig.velocity.y, 0);
+        //    }
+        //    else
+        //    {
+        //        rig.velocity = new Vector3(-movespeed, rig.velocity.y, 0);
+        //    }
 
-        }
-       
-        transform.Translate(Vector3.right * Input.GetAxis("Horizontal") * movespeed * Time.deltaTime);
+        //}
+        
+        //transform.Translate(Vector3.right * Input.GetAxis("Horizontal") * movespeed * Time.deltaTime);
         if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Joystick1Button0)) && isground)
         {
             //A.Play();
@@ -47,7 +50,8 @@ public class PlayerCtr : MonoBehaviour {
         }
     }
     private void FixedUpdate()
-    {
+    {rig.velocity =new Vector3( Input.GetAxis("Horizontal") * movespeed,rig.velocity.y,0)+tran;
+        tran = new Vector3(tran.x, 0, 0);
          point = transform.position - transform.up * 0.5f;
         Collider[] outputCols = Physics.OverlapSphere(point, 0.05f, LayerMask.GetMask("ground"));
 
@@ -59,6 +63,10 @@ public class PlayerCtr : MonoBehaviour {
         {
             isground = false;
 
+        }
+        if(isground)
+        {
+            tran = Vector3.zero;
         }
     }
     public void death()
@@ -75,6 +83,11 @@ public class PlayerCtr : MonoBehaviour {
 
         StartCoroutine(coRoutine(str));
 
+    }
+    public void Trans(object trans)
+    {
+        tran = (Vector3)trans;
+        tr = true;
     }
     IEnumerator coRoutine(string str)
     {

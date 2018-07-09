@@ -1,4 +1,6 @@
 {
-	"dependencies": {
-	}
+  "dependencies": {
+    "com.unity.postprocessing": "2.0.7-preview",
+    "com.unity.standardevents": "exclude"
+  }
 }
