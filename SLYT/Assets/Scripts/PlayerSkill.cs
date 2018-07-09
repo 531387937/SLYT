@@ -42,6 +42,10 @@ public class PlayerSkill : MonoBehaviour {
             player_sign.GetComponent<Follow>().enabled = false;
             beg_move = true;
             fangxiang = new Vector3(Input.GetAxis("4"), Input.GetAxis("5"), 0f);
+            if (fangxiang == new Vector3(0, 0, 0))
+            {
+                fangxiang = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0f);
+            }
 
             fangxiang = fangxiang.normalized;
             if (fangxiang.magnitude == 0)
