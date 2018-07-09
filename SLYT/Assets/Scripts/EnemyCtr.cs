@@ -30,7 +30,7 @@ public class EnemyCtr : MonoBehaviour {
             timer += Time.deltaTime;
 target = Player.transform.position;
             vec = (Player.transform.position - transform.position).normalized;
-            transform.position -= vec*2 * Time.deltaTime;
+            transform.position -= vec * Time.deltaTime;
         }
         if(timer>3)
         {
@@ -41,14 +41,8 @@ target = Player.transform.position;
         {
             transform.position = Vector3.MoveTowards(transform.position, target, speed*Time.deltaTime);
         }
-        if((transform.position-target).magnitude<0.1f)
-        {
-            timer = 0;
-            Go = false;
-            target = Player.transform.position;
 
-        }
-    }
+	}
     private void FixedUpdate()
     {
     }
