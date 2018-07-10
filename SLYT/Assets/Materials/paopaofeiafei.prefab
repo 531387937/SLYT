@@ -96,6 +96,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4371d74a3297cc4b90d2587f2a6ea86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  max: 3
+  min: 1
   player: {fileID: 0}
 --- !u!135 &135560277237749272
 SphereCollider:
