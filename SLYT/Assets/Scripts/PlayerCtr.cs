@@ -13,13 +13,15 @@ public class PlayerCtr : MonoBehaviour {
     private bool tr;
     private bool no=false;
     public bool piao = false;
+    private GameObject children;
     // Use this for initialization
     void Start()
     {
+        //children = transform.GetChild(0).gameObject;
         tr = false;
         // Horizontal Vertical
         tran = Vector3.zero;
-        rig = GetComponent<Rigidbody>();
+        rig =GetComponent<Rigidbody>();
         transform.position = new Vector3(PlayerPrefs.GetFloat("save_x"), PlayerPrefs.GetFloat("save_y"), 0);
     }
 
@@ -67,7 +69,7 @@ public class PlayerCtr : MonoBehaviour {
             tran = new Vector3(tran.x, 0, 0);
         }
          point = transform.position - transform.up * 0.5f;
-        Collider[] outputCols = Physics.OverlapSphere(point, 0.05f, LayerMask.GetMask("ground"));
+        Collider[] outputCols = Physics.OverlapSphere(point, 0.15f, LayerMask.GetMask("ground"));
 
         if (outputCols.Length != 0)
         {
@@ -80,6 +82,7 @@ public class PlayerCtr : MonoBehaviour {
         }
         if(isground)
         {
+            print("2113");
             tran = Vector3.zero;
             no = false;
         }

@@ -19,19 +19,20 @@ public class Transmission : MonoBehaviour {
     {
         if(other.tag=="Player")
         {
+
             brother.GetComponent<BoxCollider>().enabled = false;
             StartCoroutine(wait());
-            Rigidbody rig = other.GetComponent<Rigidbody>();
-            rig.velocity = other.GetComponent<Rigidbody>().velocity;
-            
+            Rigidbody rig = other.transform.GetComponent<Rigidbody>();
+            rig.velocity = other.transform.GetComponent<Rigidbody>().velocity;
+
 
             other.transform.position = brotherPos;
             float vel = rig.velocity.magnitude;
             Debug.Log(Mathf.Cos(angle * (3.14f / 180)));
-            other.GetComponent<Rigidbody>().velocity = Vector3.zero;
-            trans=other.GetComponent<Rigidbody>().velocity = new Vector3(-Mathf.Sin(angle*(Mathf.PI/180)), Mathf.Cos(angle*(Mathf.PI / 180)), 0) *vel;
+            rig.velocity = Vector3.zero;
+            trans=rig.velocity = new Vector3(-Mathf.Sin(angle*(Mathf.PI/180)), Mathf.Cos(angle*(Mathf.PI / 180)), 0) *vel;
             other.SendMessage("Trans",(object)trans);
-            print(other.GetComponent<Rigidbody>().velocity);
+            //print(other.GetComponent<Rigidbody>().velocity);
 
         }
     }

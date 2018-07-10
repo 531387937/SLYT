@@ -6,10 +6,10 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: emissive sign
-  m_Shader: {fileID: 4800000, guid: 3f387b3c7760d5a488b5596b42425701, type: 3}
+  m_Name: red
+  m_Shader: {fileID: 4800000, guid: 3116dc5d2d459014eb4d26279676bac8, type: 3}
   m_ShaderKeywords: 
-  m_LightmapFlags: 4
+  m_LightmapFlags: 0
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -38,12 +38,16 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Illum:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MKGlowTex:
-        m_Texture: {fileID: 10305, guid: 0000000000000000f000000000000000, type: 0}
+        m_Texture: {fileID: 2800000, guid: 647aa94e3ec2ecb4183e02f5fddfb27b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 10305, guid: 0000000000000000f000000000000000, type: 0}
+        m_Texture: {fileID: 2800000, guid: 647aa94e3ec2ecb4183e02f5fddfb27b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -63,11 +67,12 @@ Material:
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
+    - _EmissionLM: 0
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _MKGlowPower: 1.95
-    - _MKGlowTexStrength: 4.86
+    - _MKGlowPower: 2.29
+    - _MKGlowTexStrength: 0.64
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
@@ -78,7 +83,7 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 1, g: 0.5738652, b: 0.5707547, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _MKGlowColor: {r: 0.0141509175, g: 0.28528914, b: 1, a: 1}
-    - _MKGlowTexColor: {r: 1, g: 1, b: 1, a: 1}
+    - _MKGlowColor: {r: 1, g: 0, b: 0.11618376, a: 1}
+    - _MKGlowTexColor: {r: 0, g: 0, b: 0, a: 1}
