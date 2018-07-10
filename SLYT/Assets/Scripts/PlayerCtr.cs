@@ -61,7 +61,7 @@ public class PlayerCtr : MonoBehaviour {
             }
             if(!piao)
             {
-                rig.velocity = new Vector3(Input.GetAxis("Horizontal") * movespeed, rig.velocity.y, 0) + tran;
+                transform.Translate(Vector3.right * Input.GetAxis("Horizontal") * movespeed * Time.deltaTime);
             }
             
             tran = new Vector3(tran.x, 0, 0);
@@ -82,6 +82,11 @@ public class PlayerCtr : MonoBehaviour {
         {
             tran = Vector3.zero;
             no = false;
+        }
+        if (isground)
+        {
+            //tran = Vector3.zero;
+            no = true;
         }
     }
     public void death()
