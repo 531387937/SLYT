@@ -21,6 +21,8 @@ public class parent_set : MonoBehaviour {
     private void OnCollisionExit(Collision collision)
     {
         if (collision.gameObject.tag == "Player")
-            collision.gameObject.transform.SetParent(null);
+        { collision.gameObject.transform.SetParent(null);
+            collision.gameObject.transform.eulerAngles = Vector3.zero;
+        }
     }
 }

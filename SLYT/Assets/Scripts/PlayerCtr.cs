@@ -83,11 +83,7 @@ public class PlayerCtr : MonoBehaviour {
             tran = Vector3.zero;
             no = false;
         }
-        if (isground)
-        {
-            //tran = Vector3.zero;
-            no = true;
-        }
+
     }
     public void death()
     {

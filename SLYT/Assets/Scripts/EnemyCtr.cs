@@ -28,7 +28,7 @@ public class EnemyCtr : MonoBehaviour {
         if(timer>=2.5&&timer<=3)
         {
             timer += Time.deltaTime;
-target = Player.transform.position;
+target = Player.transform.position+vec*3;
             vec = (Player.transform.position - transform.position).normalized;
             transform.position -= vec*2 * Time.deltaTime;
         }
@@ -39,10 +39,17 @@ target = Player.transform.position;
         }
         if(Go)
         {
-            transform.position = Vector3.MoveTowards(transform.position, target, speed*Time.deltaTime);
-        }
-        if((transform.position-target).magnitude<0.1f)
+            transform.position = Vector3.MoveTowards(transform.position, target, speed*Time.deltaTime); if((transform.position-target).magnitude<3f)
         {
+            speed = Mathf.Lerp(speed, 0, 0.5f);
+           
+
+        }
+        }
+       
+        if ((transform.position - target).magnitude <0.1f)
+        {
+            speed=15;
             timer = 0;
             Go = false;
             target = Player.transform.position;
