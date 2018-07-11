@@ -32,8 +32,8 @@ public class PlayerCtr : MonoBehaviour {
         if (no)
         { transform.Translate(Vector3.right * Input.GetAxis("Horizontal") * movespeed * Time.deltaTime); }
         if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Joystick1Button0)) && isground)
-        {                                                 
-            //A.Play();
+        {
+            A.Play();
             rig.velocity += new Vector3(rig.velocity.x, jump_velociy, 0);
 
         }

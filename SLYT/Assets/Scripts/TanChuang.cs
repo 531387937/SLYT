@@ -23,7 +23,7 @@ public class TanChuang : MonoBehaviour {
     {
         if (collision.gameObject.tag == "Player")
         {
-            //jump.Play();
+            jump.Play();
             //collision.rigidbody.velocity = new Vector3(collision.rigidbody.velocity.x,speed, 0);
             collision.rigidbody.velocity = rrr * speed;
         }

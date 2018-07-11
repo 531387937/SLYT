@@ -38,7 +38,7 @@ public class PlayerSkill : MonoBehaviour {
         if ((Input.GetKeyDown(KeyCode.Joystick1Button5) || Input.GetKeyDown(KeyCode.Z)) && !beg_move&&Vector3.Distance(player_sign.transform.position,this.transform.position)<1f)
         {
 
-            //R1.Play();
+            R1.Play();
             player_sign.GetComponent<Follow>().enabled = false;
             beg_move = true;
             fangxiang = new Vector3(Input.GetAxis("4"), Input.GetAxis("5"), 0f);
@@ -70,7 +70,7 @@ public class PlayerSkill : MonoBehaviour {
             }
             if (Input.GetKeyDown(KeyCode.Joystick1Button4) || Input.GetKeyDown(KeyCode.X))
             {
-                //R2.Play();
+                R2.Play();
                 transform.position = player_sign.transform.position;
                 
                 player_sign.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
