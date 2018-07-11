@@ -13,4 +13,8 @@ public class jiguang : MonoBehaviour {
 	void Update () {
 		
 	}
+    void yujing()
+    {
+        
+    }
 }

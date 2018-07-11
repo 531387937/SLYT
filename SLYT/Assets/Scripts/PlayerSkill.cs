@@ -35,7 +35,7 @@ public class PlayerSkill : MonoBehaviour {
             beifen_fangxiang = beifen_fangxiang.normalized;
         }
 
-        if ((Input.GetKeyDown(KeyCode.Joystick1Button5) || Input.GetKeyDown(KeyCode.Z)) && !beg_move)
+        if ((Input.GetKeyDown(KeyCode.Joystick1Button5) || Input.GetKeyDown(KeyCode.Z)) && !beg_move&&Vector3.Distance(player_sign.transform.position,this.transform.position)<1f)
         {
 
             //R1.Play();
@@ -59,7 +59,7 @@ public class PlayerSkill : MonoBehaviour {
 
             player_sign.GetComponent<Rigidbody>().velocity = fangxiang * sign_speed;
 
-            if ( time_ >= time_count+0.2)
+            if ( time_ >= time_count+0.4)
             {
                 player_sign.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
                 //  player_sign.GetComponent<MeshRenderer>().material.SetColor("_GlowColor", Color.yellow);
@@ -72,20 +72,23 @@ public class PlayerSkill : MonoBehaviour {
             {
                 //R2.Play();
                 transform.position = player_sign.transform.position;
-            
+                
                 player_sign.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
 
 
                 player_sign.GetComponent<Follow>().enabled = true;
+                Color c = Random.ColorHSV(0.5f, 1f, 0.5f, 1f, 0.5f, 1f);
+                this.GetComponentInChildren<MeshRenderer>().material.SetColor("_MKGlowColor", c);
+                this.GetComponentInChildren<MeshRenderer>().material.SetColor("_MKGlowTexColor", c);
                 time_ = 0;
                 beg_move = false;
 
             }
-            if (time_ >= time_count-0.3f&&time_<time_count+0.2)
+            if (time_ >= time_count-0.1f&&time_<time_count+0.4)
             {
-                player_sign.GetComponent<Rigidbody>().velocity = 0.3f * fangxiang * sign_speed;
+                player_sign.GetComponent<Rigidbody>().velocity = 0.2f * fangxiang * sign_speed;
+                player_sign.GetComponent<MeshRenderer>().material.SetColor("_GlowColor", Random.ColorHSV(0.5f, 1f, 0.5f, 1f, 0.5f, 1f));
 
-               
 
             }
 

@@ -44,7 +44,7 @@ RenderSettings:
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 11
-  m_GIWorkflowMode: 0
+  m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -89,7 +89,8 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000002, guid: 2b85669b851d57048a7be4b851c33bcb,
+    type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
@@ -2613,6 +2614,52 @@ Transform:
   m_PrefabParentObject: {fileID: 4746887914712966, guid: f9d417f6ec0a23342a48d3e2a42bcc58,
     type: 2}
   m_PrefabInternal: {fileID: 1525940620}
+--- !u!1001 &751978913
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4455130335703400, guid: 5c6784fbb433c1844b256f78fe745872, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 57.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455130335703400, guid: 5c6784fbb433c1844b256f78fe745872, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -12.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455130335703400, guid: 5c6784fbb433c1844b256f78fe745872, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455130335703400, guid: 5c6784fbb433c1844b256f78fe745872, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455130335703400, guid: 5c6784fbb433c1844b256f78fe745872, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455130335703400, guid: 5c6784fbb433c1844b256f78fe745872, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455130335703400, guid: 5c6784fbb433c1844b256f78fe745872, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455130335703400, guid: 5c6784fbb433c1844b256f78fe745872, type: 2}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455130335703400, guid: 5c6784fbb433c1844b256f78fe745872, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 159.34119
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 5c6784fbb433c1844b256f78fe745872, type: 2}
+  m_IsPrefabParent: 0
 --- !u!4 &768366857 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4746887914712966, guid: f9d417f6ec0a23342a48d3e2a42bcc58,
@@ -5386,6 +5433,7 @@ GameObject:
   - component: {fileID: 1675884649}
   - component: {fileID: 1675884648}
   - component: {fileID: 1675884650}
+  - component: {fileID: 1675884651}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -5511,6 +5559,60 @@ MonoBehaviour:
   m_MinSize: 6.5
   m_Targets: []
   player1: {fileID: 1116059801}
+  Player2: {fileID: 979074921}
+--- !u!114 &1675884651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1675884643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -923714165, guid: 19b0cf21764734b05961b2e048d1c7c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _blurMode: 0
+  _reuseDepth: 0
+  _rerenderResolution: 1
+  _highPrecsion: 1
+  settings:
+    downsampleSteps: 2
+    baseResolution: 1
+    downsampleResolution: 2
+    iterations: 3
+    blurSpread: 0.6
+    innerStrength: 1.75
+    outerStrength: 1.92
+    boostStrength: 1
+    blendMode: 0
+    downsampleBlendMode: 100
+    falloff:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    falloffScale: 1
+    radius: 4
+    normalize: 1
 --- !u!1001 &1685143522
 Prefab:
   m_ObjectHideFlags: 0

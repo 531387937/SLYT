@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.29936957, g: 0.29936957, b: 0.29936957, a: 1}
+  m_IndirectSpecularColor: {r: 0.22643739, g: 0.22322118, b: 0.4514209, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -7856,6 +7856,7 @@ GameObject:
   - component: {fileID: 360696706}
   - component: {fileID: 360696705}
   - component: {fileID: 360696707}
+  - component: {fileID: 360696708}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -7981,6 +7982,60 @@ MonoBehaviour:
   m_MinSize: 6.5
   m_Targets: []
   player1: {fileID: 104332731}
+  Player2: {fileID: 711936660}
+--- !u!114 &360696708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 360696700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -923714165, guid: 19b0cf21764734b05961b2e048d1c7c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _blurMode: 0
+  _reuseDepth: 0
+  _rerenderResolution: 1
+  _highPrecsion: 0
+  settings:
+    downsampleSteps: 2
+    baseResolution: 1
+    downsampleResolution: 2
+    iterations: 3
+    blurSpread: 0.6
+    innerStrength: 1.74
+    outerStrength: 1.74
+    boostStrength: 1
+    blendMode: 0
+    downsampleBlendMode: 100
+    falloff:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    falloffScale: 1
+    radius: 4
+    normalize: 1
 --- !u!4 &361892704 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4385949272372884, guid: 8aaaeda5497a70946adcca80a334f5fb,

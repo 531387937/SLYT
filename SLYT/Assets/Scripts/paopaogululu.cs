@@ -22,13 +22,13 @@ public class paopaogululu : MonoBehaviour {
         if (taimu>jiange)
         {
             taimu = 0;
-            Instantiate(paopao, new Vector3(this.transform.position.x + Random.Range(-6,0),this.transform.position.y,0),Quaternion.EulerAngles(new Vector3(0,0,0)));
+            Instantiate(paopao, new Vector3(this.transform.position.x + Random.Range(-6,0),this.transform.position.y,0),Quaternion.Euler(Vector3.zero));
             
         }
         if(taimu2>jiange)
         {
             taimu2 = 0;
-            Instantiate(paopao, new Vector3(this.transform.position.x + Random.Range(0, 6), this.transform.position.y, 0), Quaternion.EulerAngles(new Vector3(0, 0, 0)));
+            Instantiate(paopao, new Vector3(this.transform.position.x + Random.Range(0, 6), this.transform.position.y, 0), Quaternion.Euler(Vector3.zero));
         }
 	}
 }
