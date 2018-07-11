@@ -19,9 +19,10 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4438578953304886}
-  - component: {fileID: 193782786334262410}
   - component: {fileID: 33814512478597844}
   - component: {fileID: 23508628429868654}
+  - component: {fileID: 114186652815881866}
+  - component: {fileID: 136160017755316040}
   m_Layer: 0
   m_Name: "\u5730\u523A"
   m_TagString: Untagged
@@ -36,8 +37,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1269532707144990}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 74.23, y: 0.788, z: 0}
+  m_LocalScale: {x: 1, y: 0.13, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -140,7 +141,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 21352107563400600}
+  - {fileID: 2100000, guid: 66899b1c5f0b79247ab1f8c55bcde8c8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -846,11 +847,27 @@ MonoBehaviour:
   optimizedSolidMaterial: {fileID: 21352107563400600}
   optimizedCutoutMaterial: {fileID: 21974509235187256}
   isInPreviewMode: 0
---- !u!193 &193782786334262410
-Tree:
+--- !u!114 &114186652815881866
+MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1269532707144990}
-  m_SpeedTreeWindAsset: {fileID: 0}
-  m_TreeData: {fileID: 114134588231219006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77ca28724998f5f49afe552b6cddc4cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!136 &136160017755316040
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1269532707144990}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.56
+  m_Height: 15.1
+  m_Direction: 1
+  m_Center: {x: -0.07857996, y: 6.4, z: 0}
