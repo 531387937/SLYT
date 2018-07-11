@@ -15,11 +15,13 @@ public class CameraCtr : MonoBehaviour {
     private Vector3 m_DesiredPosition;              // The position the camera is moving towards.
 
     public GameObject player1;
-
+    public GameObject Player2;
 
     private void Awake()
     {
         m_Camera = GetComponent<Camera>();
+        //player1 = GameObject.FindGameObjectWithTag("PLayer");
+        //Player2 = GameObject.FindGameObjectWithTag("sign");
     }
 
 
@@ -28,6 +30,10 @@ public class CameraCtr : MonoBehaviour {
         Move();
 
         // Zoom();
+        if(Vector3.Distance(player1.transform.position,Player2.transform.position)>8.5f)
+        {
+            this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, -1.5f)-Vector3.forward * Vector3.Distance(player1.transform.position, Player2.transform.position);
+        }
     }
 
 
@@ -43,8 +49,8 @@ public class CameraCtr : MonoBehaviour {
     private void FindAveragePosition()
     {
         Vector3 averagePos = new Vector3();
-        averagePos = player1.transform.position - new Vector3(0, -0f, 0);
-
+        averagePos =( player1.transform.position - Player2.transform.position)/2;
+        averagePos += Player2.transform.position;
 
 
         averagePos = new Vector3(averagePos.x, averagePos.y, -10);
