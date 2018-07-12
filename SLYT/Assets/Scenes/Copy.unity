@@ -10004,6 +10004,7 @@ GameObject:
   - component: {fileID: 373333733}
   - component: {fileID: 373333732}
   - component: {fileID: 373333734}
+  - component: {fileID: 373333735}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -10104,7 +10105,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   showMainBehavior: 1
   showInnerGlowBehavior: 0
-  rtFormat: 7
+  rtFormat: 2
   blurShader: {fileID: 4800000, guid: 1855d9636fad3914bacc4a543165c974, type: 3}
   compositeShader: {fileID: 4800000, guid: e384de4389ba527479054baf0ddb1d3e, type: 3}
   selectiveRenderShader: {fileID: 4800000, guid: c04b7cae8accdfb4e9c2648823ff39d7,
@@ -10171,6 +10172,18 @@ MonoBehaviour:
     falloffScale: 1
     radius: 4
     normalize: 1
+--- !u!114 &373333735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 373333727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: f239de6c700597740bb5a22b1b1239eb, type: 2}
 --- !u!1 &374677809
 GameObject:
   m_ObjectHideFlags: 0
