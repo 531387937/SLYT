@@ -25,7 +25,7 @@ public class guoshanche : MonoBehaviour {
         else
         {
             float n = hu / r;
-            float geshu = Mathf.PI / n;
+            float geshu = 2*Mathf.PI / n;
             for (int i = 1; i < geshu* yaunbuyan; i++)
             {
                 Vector3 pos = new Vector3(transform.position.x - Mathf.Sin(i * n) * r, transform.position.y - Mathf.Cos(i * n) * r, 0);
