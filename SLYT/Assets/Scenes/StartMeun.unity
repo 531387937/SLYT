@@ -1290,7 +1290,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Boss
+  m_Text: "Boss(\u5F85\u505A)"
 --- !u!222 &1543103634
 CanvasRenderer:
   m_ObjectHideFlags: 0
