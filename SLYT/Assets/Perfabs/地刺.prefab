@@ -40,7 +40,6 @@ GameObject:
   - component: {fileID: 4160782886161052}
   - component: {fileID: 33779138052235272}
   - component: {fileID: 23268543414467066}
-  - component: {fileID: 65531496030621534}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -54,13 +53,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1781298560339304}
-  m_LocalRotation: {x: -0.06805892, y: -0.039584335, z: -0.38312912, w: 0.9203332}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: -0.38356212, w: 0.9235151}
+  m_LocalPosition: {x: 0, y: 0, z: 0.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4438578953304886}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -8.952001, y: -1.2010001, z: -45.109}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -45.109}
 --- !u!4 &4438578953304886
 Transform:
   m_ObjectHideFlags: 1
@@ -68,7 +67,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1269532707144990}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 22.01, y: 4.81, z: 0}
+  m_LocalPosition: {x: -53.94, y: 2.5, z: 0}
   m_LocalScale: {x: 0.7474407, y: 1.6954296, z: 1}
   m_Children:
   - {fileID: 4160782886161052}
@@ -388,18 +387,6 @@ Mesh:
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
   m_MeshOptimized: 0
---- !u!65 &65531496030621534
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1781298560339304}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &114134588231219006
 MonoBehaviour:
   m_ObjectHideFlags: 0
