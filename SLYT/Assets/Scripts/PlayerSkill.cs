@@ -12,7 +12,7 @@ public class PlayerSkill : MonoBehaviour {
     bool beg_move = false;
     Vector3 target;
     Vector3 fangxiang = Vector3.right;
-    Vector3 beifen_fangxiang;
+    Vector3 beifen_fangxiang = Vector3.right;
     public float time_count = 1.5f;
     float time_ = 0;
     // Use this for initialization
@@ -35,6 +35,7 @@ public class PlayerSkill : MonoBehaviour {
             beifen_fangxiang = beifen_fangxiang.normalized;
         }
 
+
         if ((Input.GetKeyDown(KeyCode.Joystick1Button5) || Input.GetKeyDown(KeyCode.Z)) && !beg_move&&Vector3.Distance(player_sign.transform.position,this.transform.position)<1f)
         {
 
@@ -53,6 +54,30 @@ public class PlayerSkill : MonoBehaviour {
                 fangxiang = beifen_fangxiang;
             }
         }
+        if(Input.GetMouseButtonDown(0) && !beg_move&&Vector3.Distance(player_sign.transform.position,this.transform.position)<1f)
+        {
+
+            R1.Play();
+            player_sign.GetComponent<Follow>().enabled = false;
+            beg_move = true;
+            Vector3 pos = Camera.main.WorldToScreenPoint(player_sign.transform.position);
+
+
+            fangxiang =Input.mousePosition -pos;
+      
+            //if (fangxiang == new Vector3(0, 0, 0))
+            //{
+            //    fangxiang = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0f);
+            //}
+
+            fangxiang = fangxiang.normalized;
+            Debug.Log(pos);
+            Debug.Log(player_sign.transform.position);
+            //if (fangxiang.magnitude == 0)
+            //{
+            //    fangxiang = beifen_fangxiang;
+            //}
+        }
         if (beg_move)
         {
             time_ += Time.deltaTime;
@@ -68,7 +93,7 @@ public class PlayerSkill : MonoBehaviour {
                 time_ = 0;
                 beg_move = false;
             }
-            if (Input.GetKeyDown(KeyCode.Joystick1Button4) || Input.GetKeyDown(KeyCode.X))
+            if (Input.GetKeyDown(KeyCode.Joystick1Button4) || Input.GetKeyDown(KeyCode.X)||Input.GetMouseButtonDown(1))
             {
                 R2.Play();
                 transform.position = player_sign.transform.position;

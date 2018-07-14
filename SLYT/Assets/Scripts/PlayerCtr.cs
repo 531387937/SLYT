@@ -82,7 +82,7 @@ public class PlayerCtr : MonoBehaviour {
         }
         if(isground)
         {
-            print("2113");
+
             tran = Vector3.zero;
             no = false;
         }
