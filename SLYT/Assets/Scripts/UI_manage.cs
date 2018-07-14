@@ -9,7 +9,7 @@ public class UI_manage : MonoBehaviour {
 
     private void Awake()
     {
-        PlayerPrefs.DeleteAll();
+        //PlayerPrefs.DeleteAll();
     }
     public void startgame()
     {
@@ -22,22 +22,30 @@ public class UI_manage : MonoBehaviour {
     //载入标准场景
     public void stand()
     {
+        PlayerPrefs.SetFloat("save_x", 2f);
+
         SceneManager.LoadScene(1);
     }
     //载入游乐园场景
     public void Park()
     {
-        SceneManager.LoadScene(2);
+        PlayerPrefs.SetFloat("save_x", 0);
+
+        SceneManager.LoadScene(4);
     }
     //载入微观场景
     public void little()
     {
-        SceneManager.LoadScene(3);
+        PlayerPrefs.SetFloat("save_x", -78f);
+
+        SceneManager.LoadScene(2);
     }
     //载入未来场景
     public void future()
     {
-        SceneManager.LoadScene(4);
+        PlayerPrefs.SetFloat("save_x", -60f);
+
+        SceneManager.LoadScene(3);
     }
     //载入Boss场景
     public void Boss()

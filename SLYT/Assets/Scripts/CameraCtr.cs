@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CameraCtr : MonoBehaviour {
     public float m_DampTime = 0.2f;                 // Approximate time for the camera to refocus.
@@ -33,6 +34,10 @@ public class CameraCtr : MonoBehaviour {
         if(Vector3.Distance(player1.transform.position,Player2.transform.position)>8.5f)
         {
             this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, -1.5f)-Vector3.forward * Vector3.Distance(player1.transform.position, Player2.transform.position);
+        }
+        if(Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene(0);
         }
     }
 
