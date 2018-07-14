@@ -7,7 +7,11 @@ public class UI_manage : MonoBehaviour {
     public GameObject started;
     public GameObject[] maps;
 
-	public void startgame()
+    private void Awake()
+    {
+        PlayerPrefs.DeleteAll();
+    }
+    public void startgame()
     {
         started.gameObject.SetActive(false);
         for(int i=0; i<maps.Length; i++)

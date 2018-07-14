@@ -10,14 +10,15 @@ public class paopaopiaoyapiao : MonoBehaviour {
     float t;
     float timm;
     float speed;
-        
-       
+
+    private AudioSource paopao;  
     
     // Use this for initialization
     private void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         PlayerCtr =player. GetComponent<PlayerCtr>();
+        paopao = GetComponent<AudioSource>();
     }
     void Start () {
         this.transform.localScale = new Vector3(1, 1, 1);
@@ -45,35 +46,20 @@ public class paopaopiaoyapiao : MonoBehaviour {
     }
     private void OnTriggerEnter(Collider other)
     {
+       
         if (other.gameObject.tag == "Player")
         {
             other.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
 
             other.GetComponent<PlayerCtr>().piao = true;
 
-
+ paopao.Play();
 
 
 
         }
     }
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.gameObject.tag == "Player")
-        {
-            //Vector3.Distance(other.transform.position, this.transform.position) < 0.5f * (this.transform.localScale.x - other.transform.localScale.x)
-            
-               
-                Debug.Log(1);
-          
 
-            
-              
-            
-            
-
-        }
-    }
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.tag == "Player")

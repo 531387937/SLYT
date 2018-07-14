@@ -10,6 +10,7 @@ public class jiguang : MonoBehaviour {
     float tttttt;
     Color intitc;
     Vector3 pos;
+    public AudioSource rua;
     bool fashe = false;
     // Use this for initialization
     private void Awake()
@@ -31,6 +32,7 @@ public class jiguang : MonoBehaviour {
 	void Update () {
 		if(player.transform.position.x>this.transform.position.x)
         {
+            
             fashe = true;
 
         }
@@ -45,7 +47,7 @@ public class jiguang : MonoBehaviour {
 
         }
         if(fashe)
-        {
+        {rua.Play();
             tttttt += Time.deltaTime;
             if (tttttt > jiange && tttttt < jiange * 2)
             {

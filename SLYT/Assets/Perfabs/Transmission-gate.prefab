@@ -225,6 +225,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   brother: {fileID: 1416479171006278}
+  gate: {fileID: 0}
 --- !u!114 &114739924056804386
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -237,3 +238,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   brother: {fileID: 1668089710664194}
+  gate: {fileID: 0}

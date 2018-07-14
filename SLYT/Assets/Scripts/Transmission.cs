@@ -8,6 +8,7 @@ public class Transmission : MonoBehaviour {
     private Transform brotherTr;
     private float angle;
     private Vector3 trans;
+    public AudioSource gate;
 	// Use this for initialization
 	void Start () {
         brotherPos = brother.transform.position;
@@ -19,7 +20,7 @@ public class Transmission : MonoBehaviour {
     {
         if(other.tag=="Player")
         {
-
+            gate.Play();
             brother.GetComponent<BoxCollider>().enabled = false;
             StartCoroutine(wait());
             Rigidbody rig = other.transform.GetComponent<Rigidbody>();
