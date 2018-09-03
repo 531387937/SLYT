@@ -8,7 +8,8 @@ public class PlayerSkill : MonoBehaviour {
     public AudioSource R1;
     public AudioSource R2;
     public int power = 1;
-
+    public GameObject Green;
+    public bool isGreen = false;
     bool beg_move = false;
     Vector3 target;
     Vector3 fangxiang = Vector3.right;
@@ -47,7 +48,6 @@ public class PlayerSkill : MonoBehaviour {
             {
                 fangxiang = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0f);
             }
-
             fangxiang = fangxiang.normalized;
             if (fangxiang.magnitude == 0)
             {
@@ -93,21 +93,50 @@ public class PlayerSkill : MonoBehaviour {
                 time_ = 0;
                 beg_move = false;
             }
-            if (Input.GetKeyDown(KeyCode.Joystick1Button4) || Input.GetKeyDown(KeyCode.X)||Input.GetMouseButtonDown(1))
+            if (!isGreen)
             {
-                R2.Play();
-                transform.position = player_sign.transform.position;
-                
-                player_sign.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
+                if (Input.GetKeyDown(KeyCode.Joystick1Button4) || Input.GetKeyDown(KeyCode.X) || Input.GetMouseButtonDown(1))
+                {
+                    R2.Play();
+                    transform.position = player_sign.transform.position;
+
+                    player_sign.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
 
 
-                player_sign.GetComponent<Follow>().enabled = true;
-                Color c = Random.ColorHSV(0.5f, 1f, 0.5f, 1f, 0.5f, 1f);
+                    player_sign.GetComponent<Follow>().enabled = true;
+                    Color c = Random.ColorHSV(0.5f, 1f, 0.5f, 1f, 0.5f, 1f);
+                    this.GetComponentInChildren<MeshRenderer>().material.SetColor("_MKGlowColor", c);
+                    this.GetComponentInChildren<MeshRenderer>().material.SetColor("_MKGlowTexColor", c);
+                    time_ = 0;
+                    beg_move = false;
+                }
+            }
+            if (isGreen)
+            {
+                Color c = Color.green;
                 this.GetComponentInChildren<MeshRenderer>().material.SetColor("_MKGlowColor", c);
-                this.GetComponentInChildren<MeshRenderer>().material.SetColor("_MKGlowTexColor", c);
-                time_ = 0;
-                beg_move = false;
+                    this.GetComponentInChildren<MeshRenderer>().material.SetColor("_MKGlowTexColor", c);
+                if (Input.GetKeyDown(KeyCode.Joystick1Button4) || Input.GetKeyDown(KeyCode.X) || Input.GetMouseButtonDown(1))
+                {
+                    float x = player_sign.transform.position.x - transform.position.x;
+                    float y= player_sign.transform.position.y - transform.position.y;
+                    float a=Mathf.Atan(y / x);
+                    Vector3 ve = new Vector3(2*transform.position.x + 7.5f * fangxiang.x, 2*transform.position.y + 7.5f*fangxiang.y, 0)/2;
+                    Instantiate(Green, ve,Quaternion.EulerAngles(0,0,a));
+                    R2.Play();
+                    player_sign.transform.position=transform.position;
 
+                    player_sign.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
+
+
+                    player_sign.GetComponent<Follow>().enabled = true;
+                    Color d = Random.ColorHSV(0.5f, 1f, 0.5f, 1f, 0.5f, 1f);
+                    this.GetComponentInChildren<MeshRenderer>().material.SetColor("_MKGlowColor", d);
+                    this.GetComponentInChildren<MeshRenderer>().material.SetColor("_MKGlowTexColor", d);
+
+                    time_ = 0;
+                    beg_move = false;
+                }
             }
             if (time_ >= time_count-0.1f&&time_<time_count+0.4)
             {
@@ -121,7 +150,6 @@ public class PlayerSkill : MonoBehaviour {
     }
     public void back()
     {
-        print("Dfsd");
         time_ = 10;
     }
     private void OnCollisionStay(Collision collision)
