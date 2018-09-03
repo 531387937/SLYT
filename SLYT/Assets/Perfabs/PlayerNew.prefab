@@ -568,6 +568,9 @@ MonoBehaviour:
   sign_speed: 10
   R1: {fileID: 82460464734244378}
   R2: {fileID: 82749244668022132}
+  power: 1
+  Green: {fileID: 1280629656323102, guid: 54ac973c794d53c4ea9fc08e48fe5c4c, type: 2}
+  isGreen: 1
   time_count: 0.8
 --- !u!135 &135451439312090168
 SphereCollider:

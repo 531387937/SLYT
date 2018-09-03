@@ -71,8 +71,6 @@ public class PlayerSkill : MonoBehaviour {
             //}
 
             fangxiang = fangxiang.normalized;
-            Debug.Log(pos);
-            Debug.Log(player_sign.transform.position);
             //if (fangxiang.magnitude == 0)
             //{
             //    fangxiang = beifen_fangxiang;
@@ -113,16 +111,20 @@ public class PlayerSkill : MonoBehaviour {
             }
             if (isGreen)
             {
-                Color c = Color.green;
-                this.GetComponentInChildren<MeshRenderer>().material.SetColor("_MKGlowColor", c);
-                    this.GetComponentInChildren<MeshRenderer>().material.SetColor("_MKGlowTexColor", c);
+                
                 if (Input.GetKeyDown(KeyCode.Joystick1Button4) || Input.GetKeyDown(KeyCode.X) || Input.GetMouseButtonDown(1))
                 {
                     float x = player_sign.transform.position.x - transform.position.x;
                     float y= player_sign.transform.position.y - transform.position.y;
                     float a=Mathf.Atan(y / x);
-                    Vector3 ve = new Vector3(2*transform.position.x + 7.5f * fangxiang.x, 2*transform.position.y + 7.5f*fangxiang.y, 0)/2;
+
+                    Vector3 ve = new Vector3(2*transform.position.x + 7.5f*fangxiang.x, 2*transform.position.y +7.5f*fangxiang.y, 0)/2;
+                    if(a>0)
                     Instantiate(Green, ve,Quaternion.EulerAngles(0,0,a));
+                    if (a < 0)
+                    { Instantiate(Green, ve, Quaternion.EulerAngles(0, 0, a -Mathf.PI));
+                        print(a);
+                    }
                     R2.Play();
                     player_sign.transform.position=transform.position;
 
@@ -136,6 +138,7 @@ public class PlayerSkill : MonoBehaviour {
 
                     time_ = 0;
                     beg_move = false;
+                    isGreen = false;
                 }
             }
             if (time_ >= time_count-0.1f&&time_<time_count+0.4)

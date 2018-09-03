@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class collection : MonoBehaviour {
-    public static int collect = 0;
     // Use this for initialization
     private void Awake()
     {
@@ -13,9 +12,11 @@ public class collection : MonoBehaviour {
     {
         if(other.tag=="Player")
         {
-            collect++;
-            print(collect);
-            Destroy(this.gameObject);
+            other.GetComponent<PlayerSkill>().isGreen = true;
+            Color c = Color.green;
+            other.GetComponentInChildren<MeshRenderer>().material.SetColor("_MKGlowColor", c);
+            other.GetComponentInChildren<MeshRenderer>().material.SetColor("_MKGlowTexColor", c);
+            this.gameObject.SetActive(false);
         }
     }
 }
