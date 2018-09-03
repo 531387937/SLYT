@@ -52,7 +52,7 @@ public class paopaopiaoyapiao : MonoBehaviour {
             other.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
 
             other.GetComponent<PlayerCtr>().piao = true;
-
+            other.GetComponent<PlayerSkill>().power = 1;
  paopao.Play();
 
 

@@ -20,6 +20,7 @@ public class Transmission : MonoBehaviour {
     {
         if(other.tag=="Player")
         {
+            other.GetComponent<PlayerSkill>().power = 1;
             gate.Play();
             brother.GetComponent<BoxCollider>().enabled = false;
             StartCoroutine(wait());

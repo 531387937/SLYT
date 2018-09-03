@@ -7,7 +7,7 @@ public class PlayerSkill : MonoBehaviour {
     public float sign_speed;
     public AudioSource R1;
     public AudioSource R2;
-
+    public int power = 1;
 
     bool beg_move = false;
     Vector3 target;
@@ -36,9 +36,9 @@ public class PlayerSkill : MonoBehaviour {
         }
 
 
-        if ((Input.GetKeyDown(KeyCode.Joystick1Button5) || Input.GetKeyDown(KeyCode.Z)) && !beg_move&&Vector3.Distance(player_sign.transform.position,this.transform.position)<1f)
+        if ((Input.GetKeyDown(KeyCode.Joystick1Button5) || Input.GetKeyDown(KeyCode.Z)) && !beg_move&&Vector3.Distance(player_sign.transform.position,this.transform.position)<1f&&power!=0)
         {
-
+            power -= 1;
             R1.Play();
             player_sign.GetComponent<Follow>().enabled = false;
             beg_move = true;
@@ -54,9 +54,9 @@ public class PlayerSkill : MonoBehaviour {
                 fangxiang = beifen_fangxiang;
             }
         }
-        if(Input.GetMouseButtonDown(0) && !beg_move&&Vector3.Distance(player_sign.transform.position,this.transform.position)<1f)
+        if (Input.GetMouseButtonDown(0) && !beg_move && Vector3.Distance(player_sign.transform.position, this.transform.position) < 1f && power != 0)
         {
-
+            power -= 1;
             R1.Play();
             player_sign.GetComponent<Follow>().enabled = false;
             beg_move = true;
@@ -118,13 +118,15 @@ public class PlayerSkill : MonoBehaviour {
             }
 
         }
-
-
-
     }
     public void back()
     {
         print("Dfsd");
         time_ = 10;
+    }
+    private void OnCollisionStay(Collision collision)
+    {
+        if(collision.gameObject.tag!="noPower")
+        power = 1;
     }
 }
