@@ -6,6 +6,7 @@ TagManager:
   tags:
   - sign
   - move
+  - Conveyor belt
   layers:
   - Default
   - TransparentFX
@@ -22,7 +23,7 @@ TagManager:
   - player_can
   - sign_can
   - paopao
-  - 
+  - Conveyor belt
   - 
   - 
   - 
