@@ -11,7 +11,10 @@ public class PlayerSkill : MonoBehaviour {
     public GameObject Green;
     public bool isGreen = false;
     bool beg_move = false;
+   
     Vector3 target;
+   
+
     Vector3 fangxiang = Vector3.right;
     Vector3 beifen_fangxiang = Vector3.right;
     public float time_count = 1.5f;
@@ -22,6 +25,11 @@ public class PlayerSkill : MonoBehaviour {
 
 
     }
+    private void OnCollisionStay(Collision collision)
+    {
+        if (collision.gameObject.tag != "noPower")
+            power = 1;
+    }
     private void FixedUpdate()
     {
        
@@ -29,7 +37,6 @@ public class PlayerSkill : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-       
         if (Input.GetAxis("Horizontal") != 0)
         {
             beifen_fangxiang = Input.GetAxis("Horizontal") * Vector3.right;
@@ -40,6 +47,7 @@ public class PlayerSkill : MonoBehaviour {
         if ((Input.GetKeyDown(KeyCode.Joystick1Button5) || Input.GetKeyDown(KeyCode.Z)) && !beg_move&&Vector3.Distance(player_sign.transform.position,this.transform.position)<1f&&power!=0)
         {
             power -= 1;
+            
             R1.Play();
             player_sign.GetComponent<Follow>().enabled = false;
             beg_move = true;
@@ -76,6 +84,24 @@ public class PlayerSkill : MonoBehaviour {
             //    fangxiang = beifen_fangxiang;
             //}
         }
+        if (!isGreen)
+        {
+            if (power == 0)
+            {
+                this.GetComponentInChildren<MeshRenderer>().material.SetColor("_MKGlowColor", Color.red);
+                //this.GetComponentInChildren<MeshRenderer>().material.SetColor("_MKGlowTexColor", Color.red);
+            }
+            else
+            {
+                this.GetComponentInChildren<MeshRenderer>().material.SetColor("_MKGlowColor", Color.blue);
+                //this.GetComponentInChildren<MeshRenderer>().material.SetColor("_MKGlowTexColor", Color.blue);
+            }
+        }
+       else
+        {
+            this.GetComponentInChildren<MeshRenderer>().material.SetColor("_MKGlowColor", Color.green);
+            // this.GetComponentInChildren<MeshRenderer>().material.SetColor("_MKGlowTexColor", Color.green);
+        }
         if (beg_move)
         {
             time_ += Time.deltaTime;
@@ -93,6 +119,8 @@ public class PlayerSkill : MonoBehaviour {
             }
             if (!isGreen)
             {
+              
+
                 if (Input.GetKeyDown(KeyCode.Joystick1Button4) || Input.GetKeyDown(KeyCode.X) || Input.GetMouseButtonDown(1))
                 {
                     R2.Play();
@@ -103,15 +131,15 @@ public class PlayerSkill : MonoBehaviour {
 
                     player_sign.GetComponent<Follow>().enabled = true;
                     Color c = Random.ColorHSV(0.5f, 1f, 0.5f, 1f, 0.5f, 1f);
-                    this.GetComponentInChildren<MeshRenderer>().material.SetColor("_MKGlowColor", c);
-                    this.GetComponentInChildren<MeshRenderer>().material.SetColor("_MKGlowTexColor", c);
+                   
                     time_ = 0;
                     beg_move = false;
                 }
             }
             if (isGreen)
             {
-                
+               
+
                 if (Input.GetKeyDown(KeyCode.Joystick1Button4) || Input.GetKeyDown(KeyCode.X) || Input.GetMouseButtonDown(1))
                 {
                     float x = player_sign.transform.position.x - transform.position.x;
@@ -133,8 +161,6 @@ public class PlayerSkill : MonoBehaviour {
 
                     player_sign.GetComponent<Follow>().enabled = true;
                     Color d = Random.ColorHSV(0.5f, 1f, 0.5f, 1f, 0.5f, 1f);
-                    this.GetComponentInChildren<MeshRenderer>().material.SetColor("_MKGlowColor", d);
-                    this.GetComponentInChildren<MeshRenderer>().material.SetColor("_MKGlowTexColor", d);
 
                     time_ = 0;
                     beg_move = false;
@@ -155,9 +181,5 @@ public class PlayerSkill : MonoBehaviour {
     {
         time_ = 10;
     }
-    private void OnCollisionStay(Collision collision)
-    {
-        if(collision.gameObject.tag!="noPower")
-        power = 1;
-    }
+
 }

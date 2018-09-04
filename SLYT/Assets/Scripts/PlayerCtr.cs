@@ -7,7 +7,7 @@ public class PlayerCtr : MonoBehaviour {
     public float movespeed;
     public float jump_velociy;
     private Vector3 point;
-    private bool isground;
+    public bool isground;
     public AudioSource A;
     private Vector3 tran;
     private bool tr;
