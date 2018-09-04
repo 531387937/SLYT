@@ -58,7 +58,7 @@ public class CameraCtr : MonoBehaviour {
         averagePos += Player2.transform.position;
 
 
-        averagePos = new Vector3(averagePos.x, averagePos.y, this.transform.position.z);
+        averagePos = new Vector3(averagePos.x, averagePos.y,-10);
 
         m_DesiredPosition = averagePos;
     }
