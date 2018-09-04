@@ -11,11 +11,15 @@ public class Transmission : MonoBehaviour {
     public AudioSource gate;
 	// Use this for initialization
 	void Start () {
+        
+	}
+
+    private void Update()
+    {
         brotherPos = brother.transform.position;
         brotherTr = brother.transform;
         angle = brotherTr.eulerAngles.z;
-	}
-
+    }
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag=="Player")
