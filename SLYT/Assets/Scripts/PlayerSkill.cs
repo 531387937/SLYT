@@ -27,7 +27,7 @@ public class PlayerSkill : MonoBehaviour {
     private void OnCollisionStay(Collision collision)
     {
         if (collision.gameObject.tag != "noPower")
-            power = 1;
+            power = 2;
     }
     private void FixedUpdate()
     {
@@ -44,9 +44,7 @@ public class PlayerSkill : MonoBehaviour {
         //Vector3.Distance(player_sign.transform.position, this.transform.position) < 1f &&
 
         if ((Input.GetKeyDown(KeyCode.Joystick1Button5) || Input.GetKeyDown(KeyCode.Z)) && !beg_move&&power!=0)
-        {
-            power -= 1;
-            
+        {            
             R1.Play();
             player_sign.GetComponent<Follow>().enabled = false;
             beg_move = true;
@@ -63,7 +61,6 @@ public class PlayerSkill : MonoBehaviour {
         }
         if (Input.GetMouseButtonDown(0) && !beg_move &&  power != 0)
         {
-            power -= 1;
             R1.Play();
             player_sign.GetComponent<Follow>().enabled = false;
             beg_move = true;
@@ -122,6 +119,7 @@ public class PlayerSkill : MonoBehaviour {
 
                 if (Input.GetKeyDown(KeyCode.Joystick1Button4) || Input.GetKeyDown(KeyCode.X) || Input.GetMouseButtonDown(1))
                 {
+                    power -= 1;
                     R2.Play();
                     transform.position = player_sign.transform.position;
 
