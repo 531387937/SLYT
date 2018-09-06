@@ -8,12 +8,11 @@ public class PlayerSkill : MonoBehaviour {
     public AudioSource R1;
     public AudioSource R2;
     public int power = 1;
-    public GameObject Green;
+    public green Green;
     public bool isGreen = false;
     bool beg_move = false;
-   
     Vector3 target;
-   
+    public GameObject greenGameObject;
 
     Vector3 fangxiang = Vector3.right;
     Vector3 beifen_fangxiang = Vector3.right;
@@ -150,12 +149,14 @@ public class PlayerSkill : MonoBehaviour {
                     if (a > 0)
                     {
                         Vector3 ve = new Vector3(2*transform.position.x + 7.5f*Mathf.Cos(a), 2*transform.position.y +7.5f*Mathf.Sin(a), 0)/2;
-                        Instantiate(Green, ve, Quaternion.EulerAngles(0, 0, a));
+                        Green.greenGuidao=Instantiate(greenGameObject, ve, Quaternion.EulerAngles(0, 0, a));
+                        Green.greenGuidao.SetActive(true);
                     }
                     if (a < 0)
                     {
                         Vector3 ve = new Vector3(2 * transform.position.x + 7.5f * Mathf.Cos(a-Mathf.PI), 2 * transform.position.y + 7.5f * Mathf.Sin(a-Mathf.PI), 0) / 2;
-                        Instantiate(Green, ve, Quaternion.EulerAngles(0, 0, a -Mathf.PI));
+                        Green.greenGuidao=Instantiate(greenGameObject, ve, Quaternion.EulerAngles(0, 0, a -Mathf.PI));
+                        Green.greenGuidao.SetActive(true);
                     }
                     R2.Play();
                     player_sign.transform.position=transform.position;

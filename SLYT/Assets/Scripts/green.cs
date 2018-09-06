@@ -3,22 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class green : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public GameObject greenGuidao;
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
+            if (greenGuidao != null)
+                Destroy(greenGuidao);
             other.GetComponent<PlayerSkill>().isGreen = true;
-            Destroy(this.gameObject);
+            other.GetComponent<PlayerSkill>().Green = this;
+            this.gameObject.SetActive(false);
         }
     }
 }
