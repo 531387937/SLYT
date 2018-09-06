@@ -146,12 +146,16 @@ public class PlayerSkill : MonoBehaviour {
                     float y= player_sign.transform.position.y - transform.position.y;
                     float a=Mathf.Atan(y / x);
 
-                    Vector3 ve = new Vector3(2*transform.position.x + 7.5f*fangxiang.x, 2*transform.position.y +7.5f*fangxiang.y, 0)/2;
-                    if(a>0)
-                    Instantiate(Green, ve,Quaternion.EulerAngles(0,0,a));
+                   
+                    if (a > 0)
+                    {
+                        Vector3 ve = new Vector3(2*transform.position.x + 7.5f*Mathf.Cos(a), 2*transform.position.y +7.5f*Mathf.Sin(a), 0)/2;
+                        Instantiate(Green, ve, Quaternion.EulerAngles(0, 0, a));
+                    }
                     if (a < 0)
-                    { Instantiate(Green, ve, Quaternion.EulerAngles(0, 0, a -Mathf.PI));
-                        print(a);
+                    {
+                        Vector3 ve = new Vector3(2 * transform.position.x + 7.5f * Mathf.Cos(a-Mathf.PI), 2 * transform.position.y + 7.5f * Mathf.Sin(a-Mathf.PI), 0) / 2;
+                        Instantiate(Green, ve, Quaternion.EulerAngles(0, 0, a -Mathf.PI));
                     }
                     R2.Play();
                     player_sign.transform.position=transform.position;

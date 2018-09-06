@@ -8,6 +8,7 @@ TagManager:
   - move
   - Conveyor belt
   - noPower
+  - floorTrap
   layers:
   - Default
   - TransparentFX
