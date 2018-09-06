@@ -9,7 +9,7 @@ public class shengcheng : MonoBehaviour {
     public float time_;
     // Use this for initialization
     void Start () {
-        son = GetComponentInChildren<GameObject>();
+        son = this.gameObject.transform.GetChild(0).gameObject;
 	}
 	
 	// Update is called once per frame

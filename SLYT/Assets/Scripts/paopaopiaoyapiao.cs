@@ -6,11 +6,13 @@ public class paopaopiaoyapiao : MonoBehaviour {
     private PlayerCtr PlayerCtr;
     public float max;
     public float min;
+    public Vector3 dir;
     public GameObject player;
     float t;
     float timm;
     float speed;
-
+    public float maxspeed=1.2f;
+    public float minspeed=0.6f;
     private AudioSource paopao;  
     
     // Use this for initialization
@@ -22,12 +24,12 @@ public class paopaopiaoyapiao : MonoBehaviour {
     }
     void Start () {
         this.transform.localScale = new Vector3(1, 1, 1);
-        speed = Random.Range(0.6f, 1.2f);
+        speed = Random.Range(minspeed, maxspeed);
 
     }
 	// Update is called once per frame
 	void Update () {
-        this.transform.position += Vector3.up *speed  * Time.deltaTime;
+        this.transform.position += dir *speed  * Time.deltaTime;
         timm += Time.deltaTime;
         if(timm<0.3f)
         {
@@ -36,27 +38,27 @@ public class paopaopiaoyapiao : MonoBehaviour {
 
         }
        
-        if(this.transform.position.y>40)
-        {
-            Destroy(this.gameObject);
-        }
-
 
 
     }
     private void OnTriggerEnter(Collider other)
     {
        
+
         if (other.gameObject.tag == "Player")
         {
             other.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
 
             other.GetComponent<PlayerCtr>().piao = true;
             other.GetComponent<PlayerSkill>().power = 1;
- paopao.Play();
+            paopao.Play();
 
 
 
+        }
+        else if(other.gameObject.tag == "Untagged")
+        {
+            Destroy(this.gameObject);
         }
     }
 

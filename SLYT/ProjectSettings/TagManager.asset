@@ -9,6 +9,7 @@ TagManager:
   - Conveyor belt
   - noPower
   - floorTrap
+  - paopao
   layers:
   - Default
   - TransparentFX

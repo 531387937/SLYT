@@ -22,6 +22,7 @@ public class suizhuan : MonoBehaviour {
                 Destroy(this.gameObject);
             }
         }
+        this.gameObject.GetComponent<MeshRenderer>().material.SetFloat("_MKGlowPower",(1-count)/2);
 
 	}
     private void OnCollisionEnter(Collision collision)
