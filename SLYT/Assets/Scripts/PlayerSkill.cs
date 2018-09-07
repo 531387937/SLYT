@@ -44,7 +44,7 @@ public class PlayerSkill : MonoBehaviour {
         }
         //Vector3.Distance(player_sign.transform.position, this.transform.position) < 1f &&
 
-        if ((Input.GetKeyDown(KeyCode.Joystick1Button5) || Input.GetKeyDown(KeyCode.Z)) && !beg_move&&power!=0)
+        if ((Input.GetKeyDown(KeyCode.Joystick1Button5) || Input.GetKeyDown(KeyCode.Z)) && Vector3.Distance(player_sign.transform.position, this.transform.position) < 1f && !beg_move&&power!=0)
         {            
             R1.Play();
             player_sign.GetComponent<Follow>().enabled = false;
@@ -60,7 +60,7 @@ public class PlayerSkill : MonoBehaviour {
                 fangxiang = beifen_fangxiang;
             }
         }
-        if (Input.GetMouseButtonDown(0) && !beg_move &&  power != 0)
+        if (Input.GetMouseButtonDown(0) && !beg_move && Vector3.Distance(player_sign.transform.position, this.transform.position) < 1f && power != 0)
         {
             R1.Play();
             player_sign.GetComponent<Follow>().enabled = false;

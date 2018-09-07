@@ -12,7 +12,7 @@ TagManager:
   - paopao
   - guidao
   - switch
-
+  - boss
   layers:
   - Default
   - TransparentFX
