@@ -13,11 +13,12 @@ public class PlayerSkill : MonoBehaviour {
     bool beg_move = false;
     Vector3 target;
     public GameObject greenGameObject;
-
+    public GameObject guidaooo;
     Vector3 fangxiang = Vector3.right;
     Vector3 beifen_fangxiang = Vector3.right;
     public float time_count = 1.5f;
     float time_ = 0;
+    public bool cam_guding;
     // Use this for initialization
     void Start()
     {
@@ -174,15 +175,26 @@ public class PlayerSkill : MonoBehaviour {
             {
                 player_sign.GetComponent<Rigidbody>().velocity = 0.2f * fangxiang * sign_speed;
                 player_sign.GetComponent<MeshRenderer>().material.SetColor("_GlowColor", Random.ColorHSV(0.5f, 1f, 0.5f, 1f, 0.5f, 1f));
-
-
-            }
-
+             }
         }
     }
     public void back()
     {
         time_ = 10;
     }
-
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag=="guidao")
+        {
+            guidaooo = other.gameObject;
+            cam_guding = true;
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if(other.gameObject.tag=="guidao")
+        {
+            cam_guding = false;
+        }
+    }
 }

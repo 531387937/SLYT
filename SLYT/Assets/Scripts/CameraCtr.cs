@@ -18,8 +18,11 @@ public class CameraCtr : MonoBehaviour {
     public GameObject player1;
     public GameObject Player2;
 
+
+    PlayerSkill pppl;
     private void Awake()
     {
+       // pppl= player1.GetComponent<PlayerSkill>();
         m_Camera = GetComponent<Camera>();
         //player1 = GameObject.FindGameObjectWithTag("PLayer");
         //Player2 = GameObject.FindGameObjectWithTag("sign");
@@ -28,17 +31,28 @@ public class CameraCtr : MonoBehaviour {
 
     private void FixedUpdate()
     {
-        Move();
+        //if(pppl.cam_guding)
+        //{
+        //    Debug.Log("1");
+    
 
-        // Zoom();
-        if(Vector3.Distance(player1.transform.position,Player2.transform.position)>8.5f)
+        //}
+        //else
         {
-            this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, -1.5f)-Vector3.forward * Vector3.Distance(player1.transform.position, Player2.transform.position);
+            Debug.Log("2");
+            Move();
+
+            // Zoom();
+            if (Vector3.Distance(player1.transform.position, Player2.transform.position) > 8.5f)
+            {
+                this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, -1.5f) - Vector3.forward * Vector3.Distance(player1.transform.position, Player2.transform.position);
+            }
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                SceneManager.LoadScene(0);
+            }
         }
-        if(Input.GetKeyDown(KeyCode.R))
-        {
-            SceneManager.LoadScene(0);
-        }
+       
     }
 
 
