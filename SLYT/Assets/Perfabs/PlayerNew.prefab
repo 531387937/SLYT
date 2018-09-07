@@ -144,7 +144,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1750688550523228}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.03, y: 0.97, z: 0}
+  m_LocalPosition: {x: -19, y: -40.089996, z: 0}
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children:
   - {fileID: 4112333289983918}
@@ -540,6 +540,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movespeed: 6
   jump_velociy: 8
+  isground: 0
   A: {fileID: 82319233133659570}
   piao: 0
 --- !u!114 &114483268235059682
@@ -569,8 +570,10 @@ MonoBehaviour:
   R1: {fileID: 82460464734244378}
   R2: {fileID: 82749244668022132}
   power: 1
-  Green: {fileID: 1280629656323102, guid: 54ac973c794d53c4ea9fc08e48fe5c4c, type: 2}
+  Green: {fileID: 0}
   isGreen: 0
+  greenGameObject: {fileID: 1280629656323102, guid: 54ac973c794d53c4ea9fc08e48fe5c4c,
+    type: 2}
   time_count: 0.8
 --- !u!135 &135451439312090168
 SphereCollider:

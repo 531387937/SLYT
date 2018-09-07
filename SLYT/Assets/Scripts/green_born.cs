@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class green_born : MonoBehaviour {
     GameObject son;
+    
     float count = 0;
     public float time_;
     // Use this for initialization
     void Start()
     {
+
         son = gameObject.transform.GetChild(0).gameObject;
     }
 	

@@ -16220,22 +16220,6 @@ Prefab:
       propertyPath: player_sign
       value: 
       objectReference: {fileID: 1737980447}
-    - target: {fileID: 54887701833355230, guid: 68b78af3104909049975dac54fb38564,
-        type: 2}
-      propertyPath: m_UseGravity
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114673052575381968, guid: 68b78af3104909049975dac54fb38564,
-        type: 2}
-      propertyPath: isGreen
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114673052575381968, guid: 68b78af3104909049975dac54fb38564,
-        type: 2}
-      propertyPath: greenGameObject
-      value: 
-      objectReference: {fileID: 1280629656323102, guid: 54ac973c794d53c4ea9fc08e48fe5c4c,
-        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 68b78af3104909049975dac54fb38564, type: 2}
   m_IsPrefabAsset: 0
