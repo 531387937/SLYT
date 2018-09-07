@@ -11,6 +11,8 @@ TagManager:
   - floorTrap
   - paopao
   - guidao
+  - switch
+
   layers:
   - Default
   - TransparentFX
