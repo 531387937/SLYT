@@ -10,6 +10,7 @@ TagManager:
   - noPower
   - floorTrap
   - paopao
+  - switch
   layers:
   - Default
   - TransparentFX
