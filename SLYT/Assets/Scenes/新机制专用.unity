@@ -1818,7 +1818,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a06b61f87d3237749b5dc1ccc4ca6438, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotSpeed: 25
+  rotSpeed: 2000
 --- !u!135 &128565276
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -5041,6 +5041,120 @@ Prefab:
         type: 2}
       propertyPath: DownTime
       value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003333719396602, guid: 7bae27be7ca50ad41b3a742fb0217dde, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -0.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 4756078847132054, guid: 7bae27be7ca50ad41b3a742fb0217dde, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -0.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 4938136302275072, guid: 7bae27be7ca50ad41b3a742fb0217dde, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -0.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 4590078167268882, guid: 7bae27be7ca50ad41b3a742fb0217dde, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -0.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 4612311644002226, guid: 7bae27be7ca50ad41b3a742fb0217dde, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -0.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 4501927320401262, guid: 7bae27be7ca50ad41b3a742fb0217dde, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -0.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 136706528615181668, guid: 7bae27be7ca50ad41b3a742fb0217dde,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 136825524383815906, guid: 7bae27be7ca50ad41b3a742fb0217dde,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 136693711896024242, guid: 7bae27be7ca50ad41b3a742fb0217dde,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 136335499059559758, guid: 7bae27be7ca50ad41b3a742fb0217dde,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 136566123148564144, guid: 7bae27be7ca50ad41b3a742fb0217dde,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 136237838584745944, guid: 7bae27be7ca50ad41b3a742fb0217dde,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 136825524383815906, guid: 7bae27be7ca50ad41b3a742fb0217dde,
+        type: 2}
+      propertyPath: m_Height
+      value: 1.21
+      objectReference: {fileID: 0}
+    - target: {fileID: 136706528615181668, guid: 7bae27be7ca50ad41b3a742fb0217dde,
+        type: 2}
+      propertyPath: m_Height
+      value: 1.21
+      objectReference: {fileID: 0}
+    - target: {fileID: 136693711896024242, guid: 7bae27be7ca50ad41b3a742fb0217dde,
+        type: 2}
+      propertyPath: m_Height
+      value: 1.21
+      objectReference: {fileID: 0}
+    - target: {fileID: 136335499059559758, guid: 7bae27be7ca50ad41b3a742fb0217dde,
+        type: 2}
+      propertyPath: m_Height
+      value: 1.21
+      objectReference: {fileID: 0}
+    - target: {fileID: 136566123148564144, guid: 7bae27be7ca50ad41b3a742fb0217dde,
+        type: 2}
+      propertyPath: m_Height
+      value: 1.21
+      objectReference: {fileID: 0}
+    - target: {fileID: 136237838584745944, guid: 7bae27be7ca50ad41b3a742fb0217dde,
+        type: 2}
+      propertyPath: m_Height
+      value: 1.21
+      objectReference: {fileID: 0}
+    - target: {fileID: 136825524383815906, guid: 7bae27be7ca50ad41b3a742fb0217dde,
+        type: 2}
+      propertyPath: m_Center.y
+      value: -0.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 136706528615181668, guid: 7bae27be7ca50ad41b3a742fb0217dde,
+        type: 2}
+      propertyPath: m_Center.y
+      value: -0.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 136693711896024242, guid: 7bae27be7ca50ad41b3a742fb0217dde,
+        type: 2}
+      propertyPath: m_Center.y
+      value: -0.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 136335499059559758, guid: 7bae27be7ca50ad41b3a742fb0217dde,
+        type: 2}
+      propertyPath: m_Center.y
+      value: -0.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 136566123148564144, guid: 7bae27be7ca50ad41b3a742fb0217dde,
+        type: 2}
+      propertyPath: m_Center.y
+      value: -0.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 136237838584745944, guid: 7bae27be7ca50ad41b3a742fb0217dde,
+        type: 2}
+      propertyPath: m_Center.y
+      value: -0.12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7bae27be7ca50ad41b3a742fb0217dde, type: 2}
@@ -12594,7 +12708,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4438578953304886, guid: 2b09a75290b54634aa26679a96f1000a, type: 2}
       propertyPath: m_RootOrder
-      value: 279
+      value: 278
       objectReference: {fileID: 0}
     - target: {fileID: 4438578953304886, guid: 2b09a75290b54634aa26679a96f1000a, type: 2}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -14922,7 +15036,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a06b61f87d3237749b5dc1ccc4ca6438, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotSpeed: 25
+  rotSpeed: 2000
 --- !u!135 &1049212326
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -26200,7 +26314,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4438578953304886, guid: 2b09a75290b54634aa26679a96f1000a, type: 2}
       propertyPath: m_RootOrder
-      value: 278
+      value: 277
       objectReference: {fileID: 0}
     - target: {fileID: 4438578953304886, guid: 2b09a75290b54634aa26679a96f1000a, type: 2}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -27150,7 +27264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a06b61f87d3237749b5dc1ccc4ca6438, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotSpeed: 25
+  rotSpeed: 2000
 --- !u!135 &1833692275
 SphereCollider:
   m_ObjectHideFlags: 0
