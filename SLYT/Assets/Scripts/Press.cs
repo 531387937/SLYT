@@ -48,9 +48,16 @@ public class Press : MonoBehaviour {
     }
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag=="Player"&&canPress)
+        if((other.tag=="Player"||other.tag=="Shell")&&canPress)
         {
             press = true;           
+        }
+    }
+    private void OnTriggerStay(Collider other)
+    {
+        if ((other.tag == "Player" || other.tag == "Shell") && canPress)
+        {
+            press = true;
         }
     }
 }

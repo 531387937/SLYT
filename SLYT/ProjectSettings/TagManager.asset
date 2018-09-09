@@ -13,6 +13,7 @@ TagManager:
   - guidao
   - switch
   - boss
+  - Shell
   layers:
   - Default
   - TransparentFX
@@ -30,7 +31,7 @@ TagManager:
   - sign_can
   - paopao
   - Conveyor belt
-  - 
+  - Shell
   - 
   - 
   - 

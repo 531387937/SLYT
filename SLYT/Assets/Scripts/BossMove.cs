@@ -6,7 +6,7 @@ public class BossMove : MonoBehaviour {
     public Transform[] trs;
     private bool move=false;
     private bool Touch=true;
-    public int pos = 0;
+    public static int pos = 0;
     public static int i = 0;
     // Use this for initialization
     void Awake()
