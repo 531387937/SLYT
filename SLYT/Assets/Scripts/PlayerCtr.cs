@@ -73,7 +73,11 @@ public class PlayerCtr : MonoBehaviour {
 
         if (outputCols.Length != 0)
         {
-            isground = true;
+            //if(this.GetComponent<PlayerSkill>().beg_move)
+            //{
+                isground = true;
+            //}
+          
         }
         else
         {
