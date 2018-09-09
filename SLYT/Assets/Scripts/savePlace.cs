@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 public class savePlace : MonoBehaviour
 {
     public GameObject BOSS;
+    public int BossPos;
     private void Start()
     {
         BOSS = GameObject.FindGameObjectWithTag("boss");
@@ -13,12 +14,22 @@ public class savePlace : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            PlayerPrefs.SetFloat("save_x", transform.position.x);
-            PlayerPrefs.SetFloat("save_y", transform.position.y);
+            
             if(SceneManager.GetActiveScene().name=="boss")
             {
-                PlayerPrefs.SetFloat("boss_x", BOSS.transform.position.x);
-                PlayerPrefs.SetFloat("boss_y", BOSS.transform.position.y);
+                if (BossPos == BossMove.pos)
+                {
+                    PlayerPrefs.SetFloat("save_x", transform.position.x);
+                    PlayerPrefs.SetFloat("save_y", transform.position.y);
+                    PlayerPrefs.SetFloat("boss_x", BOSS.transform.position.x);
+                    PlayerPrefs.SetFloat("boss_y", BOSS.transform.position.y);
+                }
+                else;
+            }
+            else
+            {
+                PlayerPrefs.SetFloat("save_x", transform.position.x);
+                PlayerPrefs.SetFloat("save_y", transform.position.y);
             }
         }
     }
