@@ -109,6 +109,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.05
+  player: {fileID: 0}
+  boss: {fileID: 0}
+  dam_time: 0.1
 --- !u!136 &136589275019321856
 CapsuleCollider:
   m_ObjectHideFlags: 1

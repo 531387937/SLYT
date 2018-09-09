@@ -102428,11 +102428,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canshoot: 1
   player: {fileID: 0}
-  shoot_count: 5
+  shoot_count: 7
   shoot_1: {fileID: 1392444717906022, guid: 4c8d7b31e1d9b1c4c90e02260fbf8b54, type: 2}
   shoot_2: {fileID: 1124331761241368, guid: b066a747dc2159949a531aaa2d2b0c76, type: 2}
   shoot_3: {fileID: 1851877449534756, guid: 717f41cdd681c9843a29aa47cbbf6f45, type: 2}
   miaozhun: {fileID: 1894158677644294, guid: 0d9a80d7a1a1e10479fc8553bd83ee7c, type: 2}
+  dis_cant_att: 3
+  mar: {fileID: 2100000, guid: e8fd92233df16fc45a2cb229f7511162, type: 2}
   z: 0
 --- !u!54 &2117784646
 Rigidbody:

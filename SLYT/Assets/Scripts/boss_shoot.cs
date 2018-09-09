@@ -11,26 +11,32 @@ public class boss_shoot : MonoBehaviour {
     public GameObject shoot_2;
     public GameObject shoot_3;
     public GameObject miaozhun;
-
-
+    public float dis_cant_att;
+    public Material mar;
+    Color init;
+    GameObject boss;
 
     public float z;
     float count = 0;
 
     // Use this for initialization
     void Start () {
+        init = new Color(0, 0.5f, 0.5f,1f);
+        boss = this.gameObject;
         if (player == null)
             player = GameObject.FindGameObjectWithTag("Player");
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        if(Vector3.Distance(this.transform.position,player.transform.position)<=5)
+        if(Vector3.Distance(this.transform.position,player.transform.position)<= dis_cant_att)
         {
             canshoot = false;
+            mar.SetColor("_MKGlowColor",Color.red);
         }
         else
         {
+            mar.SetColor("_MKGlowColor", init);
             canshoot = true;
         }
 
@@ -40,7 +46,7 @@ public class boss_shoot : MonoBehaviour {
         count += Time.deltaTime;
 		if(canshoot&&count>shoot_count)
         {
-            int stage = Random.Range(3, 3);
+            int stage = Random.Range(1, 4);
             switch(stage)
             {
                 case 1:
@@ -76,7 +82,22 @@ public class boss_shoot : MonoBehaviour {
         GameObject hongxian= Instantiate(miaozhun);
         yield return new WaitForSeconds(2f);
         Destroy(hongxian);
-        Instantiate(shoot_3);
+
+        float z = boss.GetComponent<boss_shoot>().z;
+        //Vector3 jiguang_pos = new Vector3((player.transform.position.x + boss.transform.position.x) / 2, (player.transform.position.y + boss.transform.position.y) / 2, 0);
+        Vector3 jiguang_Scale = new Vector3(this.transform.localScale.x, 30+Vector3.Distance(player.transform.position, boss.transform.position) / 2, this.transform.localScale.z);
+        Quaternion jiguang_Rotation = Quaternion.Euler(new Vector3(0, 0, z + 180));
+        Vector3 jiguang_pos = new Vector3((player.transform.position.x + boss.transform.position.x) / 2, (player.transform.position.y + boss.transform.position.y) / 2, 0);
+        Vector3 dir = new Vector3(player.transform.position.x - boss.transform.position.x, player.transform.position.y - boss.transform.position.y, 0);
+        dir = Vector3.Normalize(dir);
+        jiguang_pos += dir * 30;
+
+        yield return new WaitForSeconds(0.65f);
+
+        GameObject jiguang= Instantiate(shoot_3);
+        jiguang.transform.position = jiguang_pos;
+        jiguang.transform.localScale = jiguang_Scale;
+        jiguang.transform.localRotation = jiguang_Rotation;
 
         yield return null;
     }

@@ -10,7 +10,7 @@ public class PlayerSkill : MonoBehaviour {
     public int power = 1;
     public green Green;
     public bool isGreen = false;
-    bool beg_move = false;
+    public bool beg_move = false;
     Vector3 target;
     public GameObject greenGameObject;
     public GameObject guidaooo;
@@ -27,7 +27,7 @@ public class PlayerSkill : MonoBehaviour {
     }
     private void OnCollisionStay(Collision collision)
     {
-        if (collision.gameObject.tag != "noPower")
+        if (collision.gameObject.tag != "noPower"&&!beg_move)
             power = 2;
     }
     private void FixedUpdate()
