@@ -51,6 +51,27 @@ public class PlayerCtr : MonoBehaviour {
         {
             rig.useGravity = true;
         }
+        if(isground)
+        {
+            StartCoroutine(delay());
+           
+
+        }
+        else
+        {
+            this.gameObject.GetComponent<TrailRenderer>().time = 0.5f;
+
+        }
+
+    }
+    IEnumerator delay()
+    {
+        for(int i=0;i<=9;i++)
+        {
+            this.gameObject.GetComponent<TrailRenderer>().time  -=0.005f;
+            yield return null;
+        }
+        
     }
     private void FixedUpdate()
     {
