@@ -5,9 +5,11 @@ using UnityEngine;
 public class SwitchGround : MonoBehaviour {
     public GameObject ground;
     private BoxCollider col;
+    private MeshRenderer me;
 	// Use this for initialization
 	void Start () {
         col = ground.GetComponent<BoxCollider>();
+        me = ground.GetComponent<MeshRenderer>();
 	}
 
     private void OnCollisionEnter(Collision collision)
@@ -15,6 +17,7 @@ public class SwitchGround : MonoBehaviour {
         if (collision.gameObject.tag == "switch")
         {
             col.isTrigger = false;
+            me.enabled = true;
         }
     }
     private void OnCollisionExit(Collision collision)
@@ -22,6 +25,7 @@ public class SwitchGround : MonoBehaviour {
         if (collision.gameObject.tag == "switch")
         {
             col.isTrigger = true;
+            me.enabled = false;
         }
     }
 }
