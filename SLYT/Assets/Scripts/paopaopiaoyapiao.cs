@@ -44,7 +44,18 @@ public class paopaopiaoyapiao : MonoBehaviour {
     }
     private void OnTriggerEnter(Collider other)
     {
-       
+        if (other.gameObject.tag == "Untagged")
+        {
+
+            if (playerin)
+            {
+                other.GetComponent<PlayerCtr>().piao = false;
+                //Destroy(this.gameObject);
+            }
+
+            Destroy(this.gameObject);
+
+        }
 
         if (other.gameObject.tag == "Player")
         {
@@ -57,16 +68,13 @@ public class paopaopiaoyapiao : MonoBehaviour {
 
 
         }
-        else if(other.gameObject.tag == "Untagged")
-        {
-            if(playerin)
-            {
-                other.GetComponent<PlayerCtr>().piao = false;
-            }
-            Destroy(this.gameObject);
 
-        }
     }
+    private void OnTriggerStay(Collider other)
+    {
+        
+    }
+
 
     private void OnTriggerExit(Collider other)
     {

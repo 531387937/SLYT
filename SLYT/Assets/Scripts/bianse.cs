@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class bianse : MonoBehaviour {
-
+    Color ccc;
 
 	// Use this for initialization
 	void Start () {
-		
+        ccc = this.gameObject.GetComponent<MeshRenderer>().material.GetColor("_MKGlowColor");
 	}
 	
 	// Update is called once per frame
@@ -31,10 +31,11 @@ public class bianse : MonoBehaviour {
             
         }
     }
+    //new Color(0, 0.65f, 1, 1)
     IEnumerator yanchi()
     {
         yield return new WaitForSeconds(0.6f);
-        this.gameObject.GetComponent<MeshRenderer>().material.SetColor("_MKGlowColor", new Color(0, 0.65f, 1, 1));
+        this.gameObject.GetComponent<MeshRenderer>().material.SetColor("_MKGlowColor", ccc);
         yield break;
     }
 }
