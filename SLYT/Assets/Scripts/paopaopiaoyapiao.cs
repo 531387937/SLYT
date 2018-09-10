@@ -13,7 +13,8 @@ public class paopaopiaoyapiao : MonoBehaviour {
     float speed;
     public float maxspeed=1.2f;
     public float minspeed=0.6f;
-    private AudioSource paopao;  
+    private AudioSource paopao;
+    bool playerin;
     
     // Use this for initialization
     private void Awake()
@@ -52,13 +53,18 @@ public class paopaopiaoyapiao : MonoBehaviour {
             other.GetComponent<PlayerCtr>().piao = true;
             other.GetComponent<PlayerSkill>().power = 1;
             paopao.Play();
-
+            playerin = true;
 
 
         }
         else if(other.gameObject.tag == "Untagged")
         {
+            if(playerin)
+            {
+                other.GetComponent<PlayerCtr>().piao = false;
+            }
             Destroy(this.gameObject);
+
         }
     }
 
@@ -66,7 +72,7 @@ public class paopaopiaoyapiao : MonoBehaviour {
     {
         if (other.gameObject.tag == "Player")
         {
-
+            playerin = false;
             other.GetComponent<PlayerCtr>().piao = false;
 
 

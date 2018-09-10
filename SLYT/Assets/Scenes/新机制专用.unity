@@ -9174,11 +9174,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4569401591871090, guid: d394b155d207f2547aa826a6dd6e3cf6, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 194.51
+      value: -26.7
       objectReference: {fileID: 0}
     - target: {fileID: 4569401591871090, guid: d394b155d207f2547aa826a6dd6e3cf6, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 38.3
+      value: -39.9
       objectReference: {fileID: 0}
     - target: {fileID: 4569401591871090, guid: d394b155d207f2547aa826a6dd6e3cf6, type: 2}
       propertyPath: m_LocalPosition.z
