@@ -45,7 +45,8 @@ public class PlayerSkill : MonoBehaviour {
         //Vector3.Distance(player_sign.transform.position, this.transform.position) < 1f &&
 
         if ((Input.GetKeyDown(KeyCode.Joystick1Button5) || Input.GetKeyDown(KeyCode.Z)) && Vector3.Distance(player_sign.transform.position, this.transform.position) < 3f && !beg_move&&power!=0)
-        {            
+        {
+            this.gameObject.GetComponent<TrailRenderer>().time = 0.5f;
             R1.Play();
             player_sign.GetComponent<Follow>().enabled = false;
             beg_move = true;
@@ -62,6 +63,7 @@ public class PlayerSkill : MonoBehaviour {
         }
         if (Input.GetMouseButtonDown(0) && !beg_move && Vector3.Distance(player_sign.transform.position, this.transform.position) < 3f && power != 0)
         {
+            this.gameObject.GetComponent<TrailRenderer>().time = 0.5f;
             R1.Play();
             player_sign.GetComponent<Follow>().enabled = false;
             beg_move = true;
@@ -154,7 +156,7 @@ public class PlayerSkill : MonoBehaviour {
                     //if (a > 0)
                     //{
                         Vector3 ve = new Vector3(2*transform.position.x + 7.5f*Mathf.Cos(a), 2*transform.position.y +7.5f*Mathf.Sin(a), 0)/2;
-                        Green.greenGuidao=Instantiate(greenGameObject, ve, Quaternion.EulerAngles(0, 0, a));
+                        Green.greenGuidao=Instantiate(greenGameObject, ve, Quaternion.Euler(0, 0, a));
                         Green.greenGuidao.SetActive(true);
                     //}
                     //if (a < 0)

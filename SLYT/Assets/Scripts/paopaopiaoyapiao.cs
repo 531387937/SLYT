@@ -14,7 +14,7 @@ public class paopaopiaoyapiao : MonoBehaviour {
     public float maxspeed=1.2f;
     public float minspeed=0.6f;
     private AudioSource paopao;
-    bool playerin;
+    bool playerin=false;
     
     // Use this for initialization
     private void Awake()
@@ -50,7 +50,7 @@ public class paopaopiaoyapiao : MonoBehaviour {
             if (playerin)
             {
                 other.GetComponent<PlayerCtr>().piao = false;
-                //Destroy(this.gameObject);
+                Destroy(this.gameObject);
             }
 
             Destroy(this.gameObject);
@@ -70,10 +70,7 @@ public class paopaopiaoyapiao : MonoBehaviour {
         }
 
     }
-    private void OnTriggerStay(Collider other)
-    {
-        
-    }
+
 
 
     private void OnTriggerExit(Collider other)

@@ -63,6 +63,7 @@ public class PlayerCtr : MonoBehaviour {
 
         }
 
+
     }
     IEnumerator delay()
     {
