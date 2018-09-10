@@ -28,7 +28,7 @@ public class BossMove : MonoBehaviour {
 	void Update () {
 		if(move)
         {
-            gameObject.transform.position = Vector3.MoveTowards(transform.position, trs[pos - 1].position, 5f*Time.deltaTime);
+            gameObject.transform.position = Vector3.MoveTowards(transform.position, trs[pos - 1].position, 15f*Time.deltaTime);
             if (gameObject.transform.position==trs[pos-1].position)
             {
                 move = false;

@@ -156,7 +156,7 @@ public class PlayerSkill : MonoBehaviour {
                     //if (a > 0)
                     //{
                         Vector3 ve = new Vector3(2*transform.position.x + 7.5f*Mathf.Cos(a), 2*transform.position.y +7.5f*Mathf.Sin(a), 0)/2;
-                        Green.greenGuidao=Instantiate(greenGameObject, ve, Quaternion.Euler(0, 0, a));
+                        Green.greenGuidao=Instantiate(greenGameObject, ve, Quaternion.EulerAngles(0, 0, a));
                         Green.greenGuidao.SetActive(true);
                     //}
                     //if (a < 0)
