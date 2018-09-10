@@ -22,8 +22,8 @@ public class savePlace : MonoBehaviour
                     BossMove.posi = BossPos;
                     PlayerPrefs.SetFloat("save_x", transform.position.x);
                     PlayerPrefs.SetFloat("save_y", transform.position.y);
-                    PlayerPrefs.SetFloat("boss_x", BOSS.transform.position.x);
-                    PlayerPrefs.SetFloat("boss_y", BOSS.transform.position.y);
+                    PlayerPrefs.SetFloat("boss_x", BOSS.GetComponent<BossMove>().trs[BossPos-1].position.x);
+                    PlayerPrefs.SetFloat("boss_y", BOSS.GetComponent<BossMove>().trs[BossPos-1].position.y);
                 }
                 else;
             }
