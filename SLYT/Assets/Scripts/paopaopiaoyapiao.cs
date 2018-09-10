@@ -49,10 +49,10 @@ public class paopaopiaoyapiao : MonoBehaviour {
 
             if (playerin)
             {
-                other.GetComponent<PlayerCtr>().piao = false;
+                player.GetComponent<PlayerCtr>().piao = false;
                 Destroy(this.gameObject);
             }
-
+            else
             Destroy(this.gameObject);
 
         }
