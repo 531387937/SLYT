@@ -39,7 +39,7 @@ public class CameraCtr : MonoBehaviour {
         //}
         //else
         {
-            Debug.Log("2");
+
             Move();
 
             // Zoom();

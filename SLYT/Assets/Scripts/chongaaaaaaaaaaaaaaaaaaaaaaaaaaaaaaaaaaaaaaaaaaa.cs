@@ -16,7 +16,7 @@ public class chongaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa : MonoBehaviour {
     {
         if(Mathf.Abs(player.transform.position.x-this.transform.position.x)<15)
         {
-            if(player.transform.position.y>this.transform.position.y&& !builded)
+            if(player.transform.position.y>this.transform.position.y&& !builded&&this.transform.position.y<600)
             {
                 Instantiate(guidao_40jie, this.transform.position + new Vector3(0, 40, 0), Quaternion.Euler(Vector3.zero));
                 builded = true;
