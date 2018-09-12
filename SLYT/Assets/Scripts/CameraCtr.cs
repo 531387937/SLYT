@@ -45,7 +45,7 @@ public class CameraCtr : MonoBehaviour {
             // Zoom();
             if (Vector3.Distance(player1.transform.position, Player2.transform.position) > 8.5f)
             {
-                this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, -1.5f) - Vector3.forward * Vector3.Distance(player1.transform.position, Player2.transform.position);
+                this.transform.position = new Vector3(this.transform.position.x, this.transform.position.y, -1.5f-8.5f*0.5f) - Vector3.forward * Vector3.Distance(player1.transform.position, Player2.transform.position)*0.5f;
             }
             if (Input.GetKeyDown(KeyCode.R))
             {
