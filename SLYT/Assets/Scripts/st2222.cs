@@ -21,6 +21,7 @@ public class st2222 : MonoBehaviour {
     {
         if (other.gameObject.tag == "Player")
         {
+           
             other.SendMessage("stop", true);
             float z = this.gameObject.transform.parent.rotation.eulerAngles.z;
             float x = z * (Mathf.PI / 180);

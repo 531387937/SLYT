@@ -14,6 +14,7 @@ public class PlayerCtr : MonoBehaviour {
     private bool no=false;
     public bool piao = false;
     private GameObject children;
+    public bool speedup = false;
     // Use this for initialization
     void Start()
     {
@@ -67,12 +68,20 @@ public class PlayerCtr : MonoBehaviour {
     }
     IEnumerator delay()
     {
-        for(int i=0;i<=9;i++)
+        if(!speedup)
         {
-            this.gameObject.GetComponent<TrailRenderer>().time  -=0.005f;
-            yield return null;
-        }
+
         
+             for (int i=0;i<=9;i++)
+             {
+                 this.gameObject.GetComponent<TrailRenderer>().time  -=0.005f;
+                 yield return null;
+             }
+        }
+        else
+        {
+            this.gameObject.GetComponent<TrailRenderer>().time = 0.5f;
+        }
     }
     private void FixedUpdate()
     {
