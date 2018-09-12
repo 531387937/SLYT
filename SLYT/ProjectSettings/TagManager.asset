@@ -15,6 +15,7 @@ TagManager:
   - boss
   - Shell
   - Danger
+  - miaozhun
   layers:
   - Default
   - TransparentFX

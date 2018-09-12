@@ -11,9 +11,8 @@ public class danger : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         Player=GameObject.FindGameObjectWithTag("Player");
-        dangerous = GameObject.Find("cone");
+        dangerous = GameObject.FindGameObjectWithTag("Danger");
 	}
-	
 	// Update is called once per frame
 	void Update () {
         float x = transform.position.x-Player.transform.position.x;
@@ -35,7 +34,7 @@ public class danger : MonoBehaviour {
         {
             dangerous.transform.GetChild(0).gameObject.SetActive(false);
         }
-        dangerous.transform.position = new Vector3(Player.transform.position.x + 13 * Mathf.Cos(an), Player.transform.position.y + 13 * Mathf.Sin(an),0);
+        dangerous.transform.position = new Vector3(Player.transform.position.x + 11 * Mathf.Cos(an), Player.transform.position.y + 11 * Mathf.Sin(an),0);
 	}
     private void OnBecameInvisible()
     {
