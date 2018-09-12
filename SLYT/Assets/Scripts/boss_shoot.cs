@@ -103,7 +103,7 @@ public class boss_shoot : MonoBehaviour {
     }
     IEnumerator shoooo2()
     {
-        GameObject ssss= Instantiate(shoot_1, this.transform.position, Quaternion.Euler(0, 0, z + 180));
+        GameObject ssss= Instantiate(shoot_2, this.transform.position, Quaternion.Euler(0, 0, z + 180));
         yield return new WaitForSeconds(0.5f);
         float speeeeeee = ssss.GetComponent<zidan>().speed;
         ssss.GetComponent<zidan>().speed = 0;
