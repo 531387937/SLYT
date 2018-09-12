@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 64200318170560602}
   - component: {fileID: 114430026905617600}
   - component: {fileID: 114090998310464290}
+  - component: {fileID: 114087432942520746}
   m_Layer: 0
   m_Name: default _big
   m_TagString: Untagged
@@ -40,7 +41,7 @@ Transform:
   m_GameObject: {fileID: 1124331761241368}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.6465902, y: 2.9547307, z: -1.8615084}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -116,6 +117,19 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 3575f93e5a8a8d543bc7822edc0df130, type: 3}
+--- !u!114 &114087432942520746
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1124331761241368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 336cd87b8c390d247b1d18337dba44c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dangerous: {fileID: 0}
+  Player: {fileID: 0}
 --- !u!114 &114090998310464290
 MonoBehaviour:
   m_ObjectHideFlags: 1
