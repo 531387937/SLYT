@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: Assets/Scenes/AI_TEST.unity
     guid: a466a0b052cc8484dae5a00aee4dafd4
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: "Assets/Scenes/\u65B0\u673A\u5236\u4E13\u7528.unity"
+    guid: a0f4ea61206c64046ac7a81194187b07
+  - enabled: 1
+    path: Assets/Scenes/boss.unity
+    guid: 8c35abed06a5cc348a31eb53af5be862
   m_configObjects: {}
