@@ -39,7 +39,7 @@ public class danger : MonoBehaviour {
     private void OnBecameInvisible()
     {
         IsVisible = false;
-        if(i==1)
+        if (i==1&& this.gameObject.GetComponent<zidan>().speed != 0)
         {
             Destroy(this.gameObject);
         }
@@ -47,6 +47,8 @@ public class danger : MonoBehaviour {
     private void OnBecameVisible()
     {
         IsVisible = true;
-        i = 1;
+        
+            i = 1;
+        
     }
 }
