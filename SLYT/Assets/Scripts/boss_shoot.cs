@@ -17,6 +17,11 @@ public class boss_shoot : MonoBehaviour {
     Color init;
     GameObject boss;
 
+    public AudioSource qinggongji;
+    public AudioSource zhonggongji;
+    public AudioSource miaozhun_mic;
+    public AudioSource jiguang_mic;
+    public AudioSource taishou;
     float range_min=1;
     float range_max=4;
     public float z;
@@ -105,7 +110,9 @@ public class boss_shoot : MonoBehaviour {
     IEnumerator dadadadaddaajiguang()
     {
         hongxian= Instantiate(miaozhun);
+        miaozhun_mic.Play();
         yield return new WaitForSeconds(2f);
+        
         Destroy(hongxian);
 
         float z = boss.GetComponent<boss_shoot>().z;
@@ -117,7 +124,9 @@ public class boss_shoot : MonoBehaviour {
         dir = Vector3.Normalize(dir);
         jiguang_pos += dir * 30;
 
+        
         yield return new WaitForSeconds(0.65f);
+        jiguang_mic.Play();
 
         GameObject jiguang= Instantiate(shoot_3);
         jiguang.transform.position = jiguang_pos;
@@ -130,14 +139,17 @@ public class boss_shoot : MonoBehaviour {
     {
         ssss= Instantiate(shoot_2, this.transform.position, Quaternion.Euler(0, 0, z + 180));
         yield return new WaitForSeconds(0.5f);
+        taishou.Play();
         float speeeeeee = ssss.GetComponent<zidan>().speed;
         ssss.GetComponent<zidan>().speed = 0;
+       
         for(int i=0;i<40;i++)
         {
             ssss.transform.localScale = new Vector3(0.2f + 0.01f * i, 0.2f + 0.01f * i, 0.2f + 0.01f * i);
             ssss.transform.localRotation = Quaternion.Euler(0, 0, z + 180);
             yield return null;
         }
+        zhonggongji.Play();
         ssss.transform.localRotation = Quaternion.Euler(0, 0, z + 180);
         ssss.GetComponent<zidan>().speed = speeeeeee*3.5f;
         yield break;
@@ -145,10 +157,16 @@ public class boss_shoot : MonoBehaviour {
     IEnumerator shooooo1()
     {
         Instantiate(shoot_1, this.transform.position, Quaternion.Euler(0, 0, z + 180));
+        qinggongji.Play();
+
         yield return new WaitForSeconds(0.15f);
         Instantiate(shoot_1, this.transform.position, Quaternion.Euler(0, 0, z + 180));
+        qinggongji.Play();
+
         yield return new WaitForSeconds(0.15f);
         Instantiate(shoot_1, this.transform.position, Quaternion.Euler(0, 0, z + 180));
+        qinggongji.Play();
+
         yield return new WaitForSeconds(0.15f);
         yield break;
     }
