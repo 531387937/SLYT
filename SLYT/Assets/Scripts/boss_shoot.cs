@@ -41,11 +41,13 @@ public class boss_shoot : MonoBehaviour {
         {
             if(player.transform.position.x<1248)
             {
+                this.GetComponent<BossMove>().speed = 300;
                 range_max = 3;
                 range_min = 3;
             }
             else
             {
+                this.GetComponent<BossMove>().speed = 15;
                 range_max = 4;
                 range_min = 1;
                 canshoot = true;

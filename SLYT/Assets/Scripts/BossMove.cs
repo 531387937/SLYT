@@ -9,6 +9,8 @@ public class BossMove : MonoBehaviour {
     public static int posi = 0;
     public int pos = 0;
     public static int i = 0;
+
+    public float speed = 15;
     // Use this for initialization
     void Awake()
     {
@@ -31,7 +33,7 @@ public class BossMove : MonoBehaviour {
 		if(move)
         {
            
-            gameObject.transform.position = Vector3.MoveTowards(transform.position, trs[pos - 1].position, 15f*Time.deltaTime);
+            gameObject.transform.position = Vector3.MoveTowards(transform.position, trs[pos - 1].position, speed * Time.deltaTime);
             if (gameObject.transform.position==trs[pos-1].position)
             {
                 move = false;
