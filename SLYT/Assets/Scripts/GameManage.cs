@@ -16,4 +16,8 @@ public class GameManage : MonoBehaviour {
         }
         else;
     }
+    private void Start()
+    {
+        
+    }
 }

@@ -50,7 +50,16 @@ public class BossMove : MonoBehaviour {
             this.GetComponent<boss_shoot>().StopAllCoroutines();
             Destroy(this.GetComponent<boss_shoot>().hongxian);
             Destroy(this.GetComponent<boss_shoot>().ssss);
-           this.GetComponent<boss_shoot>().enabled = false;
+            this.GetComponent<boss_shoot>().jiguang_mic.Stop();
+            this.GetComponent<boss_shoot>().miaozhun_mic.Stop();
+            this.GetComponent<boss_shoot>().taishou.Stop();
+            this.GetComponent<boss_shoot>().zhonggongji.Stop();
+
+
+
+
+
+            this.GetComponent<boss_shoot>().enabled = false;
            Touch = false;
         }
     }
