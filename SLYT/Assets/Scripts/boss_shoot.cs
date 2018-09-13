@@ -6,16 +6,19 @@ public class boss_shoot : MonoBehaviour {
     public bool canshoot = true;
     public GameObject player;
     public float shoot_count;
-    
+    public GameObject hongxian;
     public GameObject shoot_1;
     public GameObject shoot_2;
     public GameObject shoot_3;
     public GameObject miaozhun;
+    public GameObject ssss;
     public float dis_cant_att;
     public Material mar;
     Color init;
     GameObject boss;
 
+    float range_min=1;
+    float range_max=4;
     public float z;
     float count = 0;
 
@@ -29,26 +32,48 @@ public class boss_shoot : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if(Vector3.Distance(this.transform.position,player.transform.position)<= dis_cant_att)
+        if(this.transform.position.x>1229)
         {
-            canshoot = false;
-            mar.SetColor("_MKGlowColor",Color.red);
+            if(player.transform.position.x<1248)
+            {
+                range_max = 3;
+                range_min = 3;
+            }
+            else
+            {
+                range_max = 4;
+                range_min = 1;
+                canshoot = true;
+                mar.SetColor("_MKGlowColor", init);
+            }
         }
         else
         {
-            mar.SetColor("_MKGlowColor", init);
-            canshoot = true;
+
+            if (Vector3.Distance(this.transform.position, player.transform.position) <= dis_cant_att)
+            {
+                canshoot = false;
+                mar.SetColor("_MKGlowColor", Color.red);
+            }
+            else
+            {
+                mar.SetColor("_MKGlowColor", init);
+                canshoot = true;
+            }
         }
 
+
+        
 
         z = Mathf.Atan2(this.transform.position.x-player.transform.position.x ,this.transform.position.y - player.transform.position.y);
         z = -z * 180 / Mathf.PI;
         count += Time.deltaTime;
 		if(canshoot&&count>shoot_count)
         {
-            int stage = Random.Range(1, 4);
+            int stage =(int) Random.Range(range_min, range_max);
             switch(stage)
             {
+                
                 case 1:
                     {
                         StartCoroutine(shooooo1());
@@ -79,7 +104,7 @@ public class boss_shoot : MonoBehaviour {
 	}
     IEnumerator dadadadaddaajiguang()
     {
-        GameObject hongxian= Instantiate(miaozhun);
+        hongxian= Instantiate(miaozhun);
         yield return new WaitForSeconds(2f);
         Destroy(hongxian);
 
@@ -98,12 +123,12 @@ public class boss_shoot : MonoBehaviour {
         jiguang.transform.position = jiguang_pos;
         jiguang.transform.localScale = jiguang_Scale;
         jiguang.transform.localRotation = jiguang_Rotation;
-
+        
         yield return null;
     }
     IEnumerator shoooo2()
     {
-        GameObject ssss= Instantiate(shoot_2, this.transform.position, Quaternion.Euler(0, 0, z + 180));
+        ssss= Instantiate(shoot_2, this.transform.position, Quaternion.Euler(0, 0, z + 180));
         yield return new WaitForSeconds(0.5f);
         float speeeeeee = ssss.GetComponent<zidan>().speed;
         ssss.GetComponent<zidan>().speed = 0;

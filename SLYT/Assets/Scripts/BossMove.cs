@@ -30,6 +30,7 @@ public class BossMove : MonoBehaviour {
 	void Update () {
 		if(move)
         {
+           
             gameObject.transform.position = Vector3.MoveTowards(transform.position, trs[pos - 1].position, 15f*Time.deltaTime);
             if (gameObject.transform.position==trs[pos-1].position)
             {
@@ -46,8 +47,11 @@ public class BossMove : MonoBehaviour {
         {
             pos += 1;
             move = true;
-            this.GetComponent<boss_shoot>().enabled = false;
-            Touch = false;
+            this.GetComponent<boss_shoot>().StopAllCoroutines();
+            Destroy(this.GetComponent<boss_shoot>().hongxian);
+            Destroy(this.GetComponent<boss_shoot>().ssss);
+           this.GetComponent<boss_shoot>().enabled = false;
+           Touch = false;
         }
     }
 }

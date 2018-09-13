@@ -40,10 +40,13 @@ public class FASHE : MonoBehaviour {
             }
             this.transform.position = new Vector3(this.transform.position.x, player.transform.position.y + 40, 0);
 
-
+            if (player.transform.position.y > 640)
+            {
+                Destroy(this.gameObject);
+            }
 
         }
-       
+     
 
 
 

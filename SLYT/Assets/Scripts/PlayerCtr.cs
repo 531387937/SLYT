@@ -24,6 +24,18 @@ public class PlayerCtr : MonoBehaviour {
         tran = Vector3.zero;
         rig =GetComponent<Rigidbody>();
         transform.position = new Vector3(PlayerPrefs.GetFloat("save_x"), PlayerPrefs.GetFloat("save_y"), 0);
+
+
+        if (SceneManager.GetActiveScene().name == "boss")
+        {
+            if(this.transform.position.x>322)
+            {
+                movespeed = 15;
+                this.GetComponent<TrailRenderer>().material.SetColor("_MKGlowColor", Color.red);
+                speedup = true;
+
+            }
+        }
     }
 
     // Update is called once per frame
