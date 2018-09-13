@@ -3,20 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 public class StartManage : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
+    private AsyncOperation mAsyncOperation;
+    public Transform tr;
+    public bool begin=false;
+   public GameObject ga;
+    // Use this for initialization
+    void Start () {
 		
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButtonDown(0)&&!begin)
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);  //camare2D.ScreenPointToRay (Input.mousePosition);
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit))
             {
+                this.GetComponent<AudioSource>().Play();
                 GameManage.i = 0;
                 //switch(hit.collider.gameObject.GetComponent<LoadScenes>().Which_Scene)
                 //{
@@ -57,9 +61,27 @@ public class StartManage : MonoBehaviour {
                 //        }
                 //        break;
                 //}
-                SceneManager.LoadScene(hit.collider.gameObject.GetComponent<LoadScenes>().Which_Scene);
+                ga = hit.collider.gameObject;
+                StartCoroutine(scenload(hit.collider.gameObject.GetComponent<LoadScenes>().Which_Scene));
+                
             }
         }
-
+        if(begin)
+        {
+            ga.transform.position = Vector3.MoveTowards(ga.transform.position, tr.position, 5*Time.deltaTime);
+        }
+        if(ga.transform.position==tr.position&&begin)
+        {
+            mAsyncOperation.allowSceneActivation = true;
+        }
+    }
+    IEnumerator scenload(int x)
+    {      
+        mAsyncOperation=SceneManager.LoadSceneAsync(x);
+        mAsyncOperation.allowSceneActivation = false;
+        
+        yield return new WaitForSeconds(0.5f);
+        begin = true;
+        yield return mAsyncOperation;
     }
 }

@@ -24,7 +24,7 @@ public class savePlace : MonoBehaviour
                     PlayerPrefs.SetFloat("save_y", transform.position.y);
                     PlayerPrefs.SetFloat("boss_x", BOSS.GetComponent<BossMove>().trs[BossPos-1].position.x);
                     PlayerPrefs.SetFloat("boss_y", BOSS.GetComponent<BossMove>().trs[BossPos-1].position.y);
-
+                    this.GetComponent<AudioSource>().Play();
                     this.gameObject.GetComponentInChildren<MeshRenderer>().material.SetFloat("_MKGlowPower", 10);
                 }
                 else;
@@ -34,6 +34,7 @@ public class savePlace : MonoBehaviour
                 PlayerPrefs.SetFloat("save_x", transform.position.x);
                 PlayerPrefs.SetFloat("save_y", transform.position.y);
                 this.gameObject.GetComponentInChildren<MeshRenderer>().material.SetFloat("_MKGlowPower", 10);
+                this.GetComponent<AudioSource>().Play();
             }
         }
     }
